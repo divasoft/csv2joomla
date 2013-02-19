@@ -1,16 +1,35 @@
 package csv2joomla;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import org.jsoup.Jsoup;
+
 /**
  *
  * @author Develop
  */
 public class MainFrame extends javax.swing.JFrame {
+    public List<String> db = new ArrayList<>();
+    public List<StringBean> dbClear = new ArrayList<>();
 
     /**
      * Creates new form MainFrame
      */
     public MainFrame() {
         initComponents();
+    }
+    
+    public void parse() {
+        db = Util.readTextFile(jButton1.getText().trim());
+        System.out.println("Load: "+db.size());
+        
+        for (Iterator<String> it = db.iterator(); it.hasNext();) {
+            String string = it.next();
+            StringBean bean = new StringBean();
+            bean.setContent("<p>"+(Jsoup.parseBodyFragment(string.replace("<p>&nbsp;</p>", "").replaceAll("</p><p.*?>", "#")).text().trim().replace("     ", "").replace("  ", "").replace("   ", "")).replace("#", "</p><p>")+"</p>");
+            bean.setImageName("");
+        }
     }
 
     /**
@@ -31,8 +50,15 @@ public class MainFrame extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("CSV into Joomla K2 SQL (c) Divasoft, inc.");
+        setAlwaysOnTop(true);
 
         jButton1.setText("Select CSV");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -43,6 +69,11 @@ public class MainFrame extends javax.swing.JFrame {
         jTextField1.setText(" ");
 
         jButton2.setText("GO!");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Generate SQL");
 
@@ -80,11 +111,19 @@ public class MainFrame extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3))
-                .addContainerGap(201, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Util.setTextButton(jButton1, "Select CSV", "csv", "File *.csv");
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        parse();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -115,6 +154,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new MainFrame().setVisible(true);
             }
