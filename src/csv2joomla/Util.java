@@ -3,7 +3,6 @@ package csv2joomla;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.math.BigInteger;
@@ -12,8 +11,6 @@ import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -58,7 +55,7 @@ public class Util {
         for (Iterator<FileBean> it = list.iterator(); it.hasNext();) {
             FileBean fileBean = it.next();
             if (fileBean.getId().equals(id)) {
-                Util.copyFile(fileBean.getImage(), new File(to+"/"+getMD5(cnt)+"_XL.jpg"));
+                Util.copyFile(fileBean.getImage(), new File(to+"/"+getMD5(cnt)+"_L.jpg"));
                 //return fileBean.getCopyImage();
             }
         }
@@ -84,6 +81,7 @@ public class Util {
     public static void copyFile(File from, File to) {
         try {
             Files.copy(from.toPath(), to.toPath());
+            System.out.println(from.toPath()+"->"+to.toPath());
         } catch (Exception ex) {
             ex.printStackTrace();
         }
