@@ -6,14 +6,14 @@ package csv2joomla;
  */
 public class StringBean {
     private String content;
-    private String imageName;
+    private String k2Id;
 
     public StringBean() {
     }
 
-    public StringBean(String content, String imageName) {
+    public StringBean(String content, String k2Id) {
         this.content = content;
-        this.imageName = imageName;
+        this.k2Id = k2Id;
     }
 
     public String getContent() {
@@ -24,11 +24,11 @@ public class StringBean {
         this.content = content.trim();
     }
 
-    public String getImageName() {
-        return imageName;
+    public String getK2Id() {
+        return k2Id;
     }
 
-    public void setImageName(String imageName) {
-        this.imageName = imageName;
+    public void setK2Id(String k2Id) {
+        this.k2Id = k2Id;
     }
 }
