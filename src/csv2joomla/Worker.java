@@ -29,13 +29,13 @@ public class Worker implements Runnable {
     public void run() {
         core.resetPB();
         core.db = Util.readTextFile(core.pathDBtn.getText().trim());
-        core.writeLog("Load: " + core.db.size());
-        //System.out.println("Load: " + core.db.size());
+        //core.writeLog("Load: " + core.db.size());
+        System.out.println("Load: " + core.db.size());
         core.maxPB(core.db.size());
 
         List<String> tmFls = Util.readTextFile(core.pathImgBtn.getText().trim());
-        core.writeLog("Load FS: " + tmFls.size());
-        //System.out.println("Load FS: " + tmFls.size());
+        //core.writeLog("Load FS: " + tmFls.size());
+        System.out.println("Load FS: " + tmFls.size());
 
         for (Iterator<String> it = tmFls.iterator(); it.hasNext();) {
             String string = it.next();

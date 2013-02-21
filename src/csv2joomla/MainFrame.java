@@ -1,5 +1,8 @@
 package csv2joomla;
 
+import java.io.PipedInputStream;
+import java.io.PipedOutputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +25,39 @@ public class MainFrame extends javax.swing.JFrame implements ICore {
     public MainFrame() {
         initComponents();
         imageBigPrefix.setSelectedIndex(2);
+        try {
+            System.out.println("<<< [Redirect System.out/System.err into DebugConsole] >>>");
+            final PipedInputStream pis = new PipedInputStream();
+            PipedOutputStream pos = new PipedOutputStream(pis);  // throws IOException
+            PrintStream ps = new PrintStream(pos);
+            System.setOut(ps);
+            System.setErr(ps);
+            Thread t = new Thread(
+                    new Runnable() {
+
+                        @Override
+                        public void run() {
+                            try {
+                                byte[] buf = new byte[8192];
+                                int bytesRead = 0;
+                                while ((bytesRead = pis.read(buf)) != -1) {
+                                    outSqlArea.append(new String(buf, 0, bytesRead));
+                                }
+                            } catch (Exception ioe) {
+                                //ioe.printStacktrace();
+                                System.err.println("Fatal Error:  Exiting reader.");
+                            } finally {
+                                try {
+                                    pis.close();
+                                } catch (Exception e) {
+                                }
+                            }
+                        }
+                    });
+            t.start();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
     
     public String replace(StringBean bean, String ordering) {
@@ -34,6 +70,10 @@ public class MainFrame extends javax.swing.JFrame implements ICore {
     }
 
     public void parse() {
+        SQL_READY="";
+        db.clear();
+        dbClear.clear();
+        dbFiles.clear();
         Worker worker = new Worker(this);
     }
 
@@ -158,6 +198,7 @@ public class MainFrame extends javax.swing.JFrame implements ICore {
         k2ImgBigW.setToolTipText("width");
 
         outSqlArea.setColumns(20);
+        outSqlArea.setFont(new java.awt.Font("Lucida Console", 0, 9)); // NOI18N
         outSqlArea.setRows(5);
         jScrollPane1.setViewportView(outSqlArea);
 
@@ -410,6 +451,7 @@ public class MainFrame extends javax.swing.JFrame implements ICore {
     @Override
     public void incPB() {
         progressBar.setValue(progressBar.getValue()+1);
+        progressBar.setToolTipText(""+progressBar.getValue()+" / "+progressBar.getMaximum()+"");
     }
 
     @Override
@@ -419,14 +461,14 @@ public class MainFrame extends javax.swing.JFrame implements ICore {
 
     @Override
     public void fin() {
-        writeLog("============================");
-        writeLog("======     !FIN!      ======");
-        writeLog("============================");
+        System.out.println("============================");
+        System.out.println("======     !FIN!      ======");
+        System.out.println("============================");
         generatorBtn.setEnabled(true);
     }
 
-    @Override
+    /*@Override
     public void writeLog(String str) {
         outSqlArea.append(str+"\n");
-    }
+    }*/
 }

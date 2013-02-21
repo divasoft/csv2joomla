@@ -9,7 +9,6 @@ public interface ICore {
     public void incPB();
     public void maxPB(int max);
     public void fin();
-    public void writeLog(String str);
-    
-            
+    //public void writeLog(String str);
+      
 }
