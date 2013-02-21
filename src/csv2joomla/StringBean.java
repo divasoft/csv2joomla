@@ -5,16 +5,18 @@ package csv2joomla;
  * @author Develop
  */
 public class StringBean {
-    private String content;
-    private String intro;
-    private String k2Id;
+    private String content="";
+    private String intro="";
+    private String title="";
+    private String k2Id="";
 
     public StringBean() {
     }
 
-    public StringBean(String content, String intro, String k2Id) {
+    public StringBean(String content, String intro, String title, String k2Id) {
         this.content = content;
         this.intro = intro;
+        this.title = title;
         this.k2Id = k2Id;
     }
 
@@ -34,11 +36,18 @@ public class StringBean {
         String[] str = content.split("\\|");
         if (str.length==3) {
             if (str[2].isEmpty()) {
+                this.setTitle(str[0]);
+                this.setIntro(str[1]);
                 this.content="";
-                
+            } else {
+                this.setTitle(str[0]);
+                this.setIntro(str[1]);
+                this.content="<p>"+str[2].replace("#", "</p><p>").replace("  ", "") +"</p>";
             }
+        } else {
+            System.err.println("<3");
+            this.content="ERROR";
         }
-        this.setIntro(str[0]);
         /*if (str.length==1) {
             this.content="";
         } else {
@@ -56,5 +65,13 @@ public class StringBean {
 
     public void setK2Id(String k2Id) {
         this.k2Id = k2Id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = "<p>"+title.trim()+"</p>";
     }
 }
