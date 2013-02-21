@@ -138,4 +138,58 @@ public class Util {
             System.err.println(ex.getLocalizedMessage());
         }
     }
+    
+    /**
+     *
+     * @param inc - RUS(UTF-8) to Latin
+     * @return translite str
+     */
+    public static String toTranslite(String inc)
+    {
+        String tmp="";
+        try {
+            char[] str = new String(inc.getBytes("UTF-8"), "UTF-8").toLowerCase().toCharArray();
+            for (int i=0;i<str.length;i++)
+            {
+                switch(str[i])
+                {
+                    case 'а': tmp+="a"; break;
+                    case 'б': tmp+="b"; break;
+                    case 'в': tmp+="v"; break;
+                    case 'г': tmp+="g"; break;
+                    case 'д': tmp+="d"; break;
+                    case 'е': tmp+="e"; break;
+                    case 'ё': tmp+="jo"; break;
+                    case 'ж': tmp+="zh"; break;
+                    case 'з': tmp+="z"; break;
+                    case 'и': tmp+="i"; break;
+                    case 'й': tmp+="jj"; break;
+                    case 'к': tmp+="k"; break;
+                    case 'л': tmp+="l"; break;
+                    case 'м': tmp+="m"; break;
+                    case 'н': tmp+="n"; break;
+                    case 'о': tmp+="o"; break;
+                    case 'п': tmp+="p"; break;
+                    case 'р': tmp+="r"; break;
+                    case 'с': tmp+="s"; break;
+                    case 'т': tmp+="t"; break;
+                    case 'у': tmp+="u"; break;
+                    case 'ф': tmp+="f"; break;
+                    case 'х': tmp+="kh"; break;
+                    case 'ц': tmp+="c"; break;
+                    case 'ч': tmp+="ch"; break;
+                    case 'ш': tmp+="sh"; break;
+                    case 'щ': tmp+="sch"; break;
+                    case 'ъ': tmp+=""; break;
+                    case 'ы': tmp+="y"; break;
+                    case 'ь': tmp+="'"; break;
+                    case 'э': tmp+="eh"; break;
+                    case 'ю': tmp+="yu"; break;
+                    case 'я': tmp+="ya"; break;
+                    default: tmp+=str[i];
+                }
+            }
+        } catch (Exception ex) { ex.printStackTrace();}
+        return tmp;
+    }
 }
