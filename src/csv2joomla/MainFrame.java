@@ -484,6 +484,7 @@ public class MainFrame extends javax.swing.JFrame implements ICore {
 
         if (!SQL_READY.isEmpty()) {
             generatorBtn.setEnabled(true);
+            generatorBtnActionPerformed(null);
         }
         goBtn.setText("GO");
     }
