@@ -137,7 +137,7 @@ public class MainFrame extends javax.swing.JFrame implements ICore {
         patternSqlArea = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("CSV into Joomla K2 SQL (c) Divasoft, inc.");
+        setTitle("CSV into Joomla K2 SQL & Image resize (c) Divasoft, inc.");
 
         pathDBtn.setText("Select DB Articles CSV");
         pathDBtn.setToolTipText("<html><body>Format (without \\\"): <b>title|intro|fulltext</b></body></html>");
