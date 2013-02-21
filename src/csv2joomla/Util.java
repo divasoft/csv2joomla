@@ -20,6 +20,7 @@ import java.util.List;
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import org.imgscalr.Scalr;
 
@@ -75,6 +76,7 @@ public class Util {
             BufferedWriter out = new BufferedWriter(writer);
             out.write(text);
             out.close();
+            JOptionPane.showMessageDialog(null, "File ["+patch+"] saved!");
         } catch (Exception ex) {
             System.err.println(ex.getLocalizedMessage());
         }
