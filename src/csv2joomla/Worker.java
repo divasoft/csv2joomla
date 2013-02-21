@@ -88,7 +88,7 @@ public class Worker implements Runnable {
             core.fin(true);
         } catch (Exception ex) {
             core.fin(false);
-            System.out.println(ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
         isAlive=false;
     }

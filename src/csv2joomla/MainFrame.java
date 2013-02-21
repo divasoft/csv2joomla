@@ -63,7 +63,7 @@ public class MainFrame extends javax.swing.JFrame implements ICore {
 
     public String replace(StringBean bean, String ordering) {
         try {
-            return patternSqlArea.getText().trim().replace("{id}", bean.getK2Id()).replace("{title}", bean.getTitle()).replace("{alias}", Util.toTranslite(bean.getTitle())).replace("{catid}", k2CatId.getText()).replace("{introtext}", bean.getIntro()).replace("{fulltext}", bean.getContent()).replace("{ordering}", ordering);
+            return patternSqlArea.getText().trim().replace("{id}", bean.getK2Id()).replace("{title}", bean.getTitle()).replace("{alias}", Util.toTranslite(bean.getTitle().replace(" ", "-"))).replace("{catid}", k2CatId.getText()).replace("{introtext}", bean.getIntro()).replace("{fulltext}", bean.getContent()).replace("{ordering}", ordering);
         } catch (Exception ex) {
             System.out.println(ex.getLocalizedMessage());
             return "";

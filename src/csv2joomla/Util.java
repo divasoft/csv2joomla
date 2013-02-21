@@ -62,7 +62,7 @@ public class Util {
             is.close();
             return result;
         } catch (Exception ex) {
-            System.out.println(ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
             return null;
         }
     }
@@ -76,7 +76,7 @@ public class Util {
             out.write(text);
             out.close();
         } catch (Exception ex) {
-            System.out.println(ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 
@@ -109,7 +109,7 @@ public class Util {
             ImageIO.write(res_img, "jpg", to);
             System.out.println("IMG["+w+"*"+h+"]: "+image.toPath()+"->"+to.toPath());
         } catch (Exception ex) {
-            System.out.println(ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
             //ex.printStackTrace();
         }
     }
@@ -125,7 +125,7 @@ public class Util {
             m.update(str.getBytes(), 0, str.length());
             return new BigInteger(1, m.digest()).toString(16);
         } catch (Exception ex) {
-            System.out.println(ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
             return "error";
         }
     }
@@ -135,7 +135,7 @@ public class Util {
             Files.copy(from.toPath(), to.toPath());
             System.out.println("IMG: "+from.toPath()+"->"+to.toPath());
         } catch (Exception ex) {
-            System.out.println(ex.getLocalizedMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
     
@@ -190,7 +190,7 @@ public class Util {
                 }
             }
         } catch (Exception ex) { 
-            System.out.println(ex.getLocalizedMessage()); 
+            System.err.println(ex.getLocalizedMessage()); 
         }
         return tmp;
     }

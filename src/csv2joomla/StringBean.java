@@ -45,7 +45,7 @@ public class StringBean {
                 this.content="<p>"+str[2].replace("#", "</p><p>").replace("  ", "") +"</p>";
             }
         } else {
-            System.err.println("<3");
+            System.err.println("Error parse content");
             this.content="ERROR";
         }
         /*if (str.length==1) {

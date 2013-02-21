@@ -8,7 +8,5 @@ public interface ICore {
     public void resetPB();
     public void incPB();
     public void maxPB(int max);
-    public void fin(boolean ok);
-    //public void writeLog(String str);
-      
+    public void fin(boolean ok);  
 }
