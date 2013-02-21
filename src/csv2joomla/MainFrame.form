@@ -185,7 +185,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="goBtn">
       <Properties>
-        <Property name="text" type="java.lang.String" value="GO!"/>
+        <Property name="text" type="java.lang.String" value="GO"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="goBtnActionPerformed"/>
@@ -402,7 +402,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTextArea" name="outSqlArea">
+                <Component class="javax.swing.JTextArea" name="consoleArea">
                   <Properties>
                     <Property name="columns" type="int" value="20"/>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">

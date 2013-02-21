@@ -12,10 +12,11 @@ import java.util.List;
  */
 public class MainFrame extends javax.swing.JFrame implements ICore {
 
-    public String SQL_READY="";
+    public String SQL_READY = "";
     public List<String> db = new ArrayList<>();
     public List<StringBean> dbClear = new ArrayList<>();
     public List<FileBean> dbFiles = new ArrayList<>();
+    public Worker worker = null;
     //public String sqlHead = "INSERT INTO `kmtt_k2_items` (`id`, `title`, `alias`, `catid`, `published`, `introtext`, `fulltext`, `video`, `gallery`, `extra_fields`, `extra_fields_search`, `created`, `created_by`, `created_by_alias`, `checked_out`, `checked_out_time`, `modified`, `modified_by`, `publish_up`, `publish_down`, `trash`, `access`, `ordering`, `featured`, `featured_ordering`, `image_caption`, `image_credits`, `video_caption`, `video_credits`, `hits`, `params`, `metadesc`, `metadata`, `metakey`, `plugins`, `language`) VALUES";
     //public String sqlBody = "({id}, '{title}', '{alias}', {catid}, 1, '{introtext}', '{fulltext}', NULL, NULL, '[]', '', '2013-02-19 11:02:15', 653, '', 653, '2013-02-20 11:45:01', '0000-00-00 00:00:00', 0, '2013-02-19 11:02:15', '0000-00-00 00:00:00', 0, 1, {ordering}, 0, 0, '', '', '', '', 0, '{\"catItemTitle\":\"\",\"catItemTitleLinked\":\"\",\"catItemFeaturedNotice\":\"\",\"catItemAuthor\":\"\",\"catItemDateCreated\":\"\",\"catItemRating\":\"\",\"catItemImage\":\"\",\"catItemIntroText\":\"\",\"catItemExtraFields\":\"\",\"catItemHits\":\"\",\"catItemCategory\":\"\",\"catItemTags\":\"\",\"catItemAttachments\":\"\",\"catItemAttachmentsCounter\":\"\",\"catItemVideo\":\"\",\"catItemVideoWidth\":\"\",\"catItemVideoHeight\":\"\",\"catItemAudioWidth\":\"\",\"catItemAudioHeight\":\"\",\"catItemVideoAutoPlay\":\"\",\"catItemImageGallery\":\"\",\"catItemDateModified\":\"\",\"catItemReadMore\":\"\",\"catItemCommentsAnchor\":\"\",\"catItemK2Plugins\":\"\",\"itemDateCreated\":\"\",\"itemTitle\":\"\",\"itemFeaturedNotice\":\"\",\"itemAuthor\":\"\",\"itemFontResizer\":\"\",\"itemPrintButton\":\"\",\"itemEmailButton\":\"\",\"itemSocialButton\":\"\",\"itemVideoAnchor\":\"\",\"itemImageGalleryAnchor\":\"\",\"itemCommentsAnchor\":\"\",\"itemRating\":\"\",\"itemImage\":\"\",\"itemImgSize\":\"\",\"itemImageMainCaption\":\"\",\"itemImageMainCredits\":\"\",\"itemIntroText\":\"\",\"itemFullText\":\"\",\"itemExtraFields\":\"\",\"itemDateModified\":\"\",\"itemHits\":\"\",\"itemCategory\":\"\",\"itemTags\":\"\",\"itemAttachments\":\"\",\"itemAttachmentsCounter\":\"\",\"itemVideo\":\"\",\"itemVideoWidth\":\"\",\"itemVideoHeight\":\"\",\"itemAudioWidth\":\"\",\"itemAudioHeight\":\"\",\"itemVideoAutoPlay\":\"\",\"itemVideoCaption\":\"\",\"itemVideoCredits\":\"\",\"itemImageGallery\":\"\",\"itemNavigation\":\"\",\"itemComments\":\"\",\"itemTwitterButton\":\"\",\"itemFacebookButton\":\"\",\"itemGooglePlusOneButton\":\"\",\"itemAuthorBlock\":\"\",\"itemAuthorImage\":\"\",\"itemAuthorDescription\":\"\",\"itemAuthorURL\":\"\",\"itemAuthorEmail\":\"\",\"itemAuthorLatest\":\"\",\"itemAuthorLatestLimit\":\"\",\"itemRelated\":\"\",\"itemRelatedLimit\":\"\",\"itemRelatedTitle\":\"\",\"itemRelatedCategory\":\"\",\"itemRelatedImageSize\":\"\",\"itemRelatedIntrotext\":\"\",\"itemRelatedFulltext\":\"\",\"itemRelatedAuthor\":\"\",\"itemRelatedMedia\":\"\",\"itemRelatedImageGallery\":\"\",\"itemK2Plugins\":\"\"}', '', 'robots=\nauthor=', '', '', '*')";
 
@@ -27,6 +28,7 @@ public class MainFrame extends javax.swing.JFrame implements ICore {
         imageBigPrefix.setSelectedIndex(2);
         try {
             System.out.println("<<< [Redirect System.out/System.err into DebugConsole] >>>");
+
             final PipedInputStream pis = new PipedInputStream();
             PipedOutputStream pos = new PipedOutputStream(pis);  // throws IOException
             PrintStream ps = new PrintStream(pos);
@@ -34,14 +36,13 @@ public class MainFrame extends javax.swing.JFrame implements ICore {
             System.setErr(ps);
             Thread t = new Thread(
                     new Runnable() {
-
                         @Override
                         public void run() {
                             try {
                                 byte[] buf = new byte[8192];
                                 int bytesRead = 0;
                                 while ((bytesRead = pis.read(buf)) != -1) {
-                                    outSqlArea.append(new String(buf, 0, bytesRead));
+                                    consoleArea.append(new String(buf, 0, bytesRead));
                                 }
                             } catch (Exception ioe) {
                                 //ioe.printStacktrace();
@@ -59,22 +60,38 @@ public class MainFrame extends javax.swing.JFrame implements ICore {
             ex.printStackTrace();
         }
     }
-    
+
     public String replace(StringBean bean, String ordering) {
         try {
             return patternSqlArea.getText().trim().replace("{id}", bean.getK2Id()).replace("{title}", bean.getTitle()).replace("{alias}", Util.toTranslite(bean.getTitle())).replace("{catid}", k2CatId.getText()).replace("{introtext}", bean.getIntro()).replace("{fulltext}", bean.getContent()).replace("{ordering}", ordering);
         } catch (Exception ex) {
-            System.err.println(ex.getLocalizedMessage());
+            System.out.println(ex.getLocalizedMessage());
             return "";
         }
     }
 
     public void parse() {
-        SQL_READY="";
-        db.clear();
-        dbClear.clear();
-        dbFiles.clear();
-        Worker worker = new Worker(this);
+        SQL_READY = "";
+        if (db != null) {
+            db.clear();
+        }
+        if (dbClear != null) {
+            dbClear.clear();
+        }
+        if (dbFiles != null) {
+            dbFiles.clear();
+        }
+
+        if (worker != null && worker.live()) {
+            worker.stop();
+            worker = null;
+            resetPB();
+            goBtn.setText("GO");
+        } else {
+            consoleArea.setText("");
+            goBtn.setText("STOP");
+            worker = new Worker(this);
+        }
     }
 
     /**
@@ -111,7 +128,7 @@ public class MainFrame extends javax.swing.JFrame implements ICore {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        outSqlArea = new javax.swing.JTextArea();
+        consoleArea = new javax.swing.JTextArea();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         sqlHeadArea = new javax.swing.JTextArea();
@@ -135,7 +152,7 @@ public class MainFrame extends javax.swing.JFrame implements ICore {
         k2CatId.setText("3");
         k2CatId.setToolTipText("Integer");
 
-        goBtn.setText("GO!");
+        goBtn.setText("GO");
         goBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 goBtnActionPerformed(evt);
@@ -197,10 +214,10 @@ public class MainFrame extends javax.swing.JFrame implements ICore {
         k2ImgBigW.setText("240");
         k2ImgBigW.setToolTipText("width");
 
-        outSqlArea.setColumns(20);
-        outSqlArea.setFont(new java.awt.Font("Lucida Console", 0, 9)); // NOI18N
-        outSqlArea.setRows(5);
-        jScrollPane1.setViewportView(outSqlArea);
+        consoleArea.setColumns(20);
+        consoleArea.setFont(new java.awt.Font("Lucida Console", 0, 9)); // NOI18N
+        consoleArea.setRows(5);
+        jScrollPane1.setViewportView(consoleArea);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -409,6 +426,7 @@ public class MainFrame extends javax.swing.JFrame implements ICore {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JTextArea consoleArea;
     public javax.swing.JCheckBox copyImgButton;
     public javax.swing.JButton generatorBtn;
     public javax.swing.JButton goBtn;
@@ -433,7 +451,6 @@ public class MainFrame extends javax.swing.JFrame implements ICore {
     public javax.swing.JTextField k2ImgMinH;
     public javax.swing.JTextField k2ImgMinW;
     public javax.swing.JTextField k2StartNumField;
-    public javax.swing.JTextArea outSqlArea;
     public javax.swing.JButton pathDBtn;
     public javax.swing.JButton pathImgBtn;
     public javax.swing.JTextArea patternSqlArea;
@@ -450,8 +467,8 @@ public class MainFrame extends javax.swing.JFrame implements ICore {
 
     @Override
     public void incPB() {
-        progressBar.setValue(progressBar.getValue()+1);
-        progressBar.setToolTipText(""+progressBar.getValue()+" / "+progressBar.getMaximum()+"");
+        progressBar.setValue(progressBar.getValue() + 1);
+        progressBar.setToolTipText("" + progressBar.getValue() + " / " + progressBar.getMaximum() + "");
     }
 
     @Override
@@ -460,15 +477,19 @@ public class MainFrame extends javax.swing.JFrame implements ICore {
     }
 
     @Override
-    public void fin() {
+    public void fin(boolean ok) {
         System.out.println("============================");
-        System.out.println("======     !FIN!      ======");
+        System.out.println("======     " + ((ok) ? "!FIN!" : "FAIL.") + "      ======");
         System.out.println("============================");
-        generatorBtn.setEnabled(true);
+
+        if (!SQL_READY.isEmpty()) {
+            generatorBtn.setEnabled(true);
+        }
+        goBtn.setText("GO");
     }
 
     /*@Override
-    public void writeLog(String str) {
-        outSqlArea.append(str+"\n");
-    }*/
+     public void writeLog(String str) {
+     outSqlArea.append(str+"\n");
+     }*/
 }
