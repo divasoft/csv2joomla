@@ -9,15 +9,17 @@ public class StringBean {
     private String intro="";
     private String title="";
     private String k2Id="";
+    private String date="";
 
     public StringBean() {
     }
 
-    public StringBean(String content, String intro, String title, String k2Id) {
+    public StringBean(String content, String intro, String title, String k2Id, String date) {
         this.content = content;
         this.intro = intro;
         this.title = title;
         this.k2Id = k2Id;
+        this.date = date;
     }
 
     public String getIntro() {
@@ -25,7 +27,7 @@ public class StringBean {
     }
 
     public void setIntro(String intro) {
-        this.intro =  "<p>" + intro.trim() + "</p>";
+        this.intro =  "<p>" + intro.replace("'", "").trim() + "</p>";
     }
 
     public String getContent() {
@@ -33,16 +35,18 @@ public class StringBean {
     }
 
     public void setContent(String content) {
-        String[] str = content.split("\\|");
-        if (str.length==3) {
+        String[] str = content.replace("'", "").split("\\|");
+        if (str.length==4) {
             if (str[2].isEmpty()) {
                 this.setTitle(str[0]);
                 this.setIntro(str[1]);
                 this.content="";
+                this.date="";
             } else {
                 this.setTitle(str[0]);
                 this.setIntro(str[1]);
-                this.content="<p>"+str[2].replace("#", "</p><p>").replace("  ", "") +"</p>";
+                this.content="<p>"+str[2].replace("#", "</p><p>").replace("  ", "").replace("<p></p>", "").replace("<p> </p>", "").replace("<p>·</p>", "") +"</p>";
+                this.setDate(str[3]);
             }
         } else {
             System.err.println("Error parse content");
@@ -72,6 +76,15 @@ public class StringBean {
     }
 
     public void setTitle(String title) {
-        this.title = "<p>"+title.trim()+"</p>";
+        this.title = title.replace("'", "").replace("« ", "«").trim();
     }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
 }

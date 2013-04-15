@@ -39,12 +39,12 @@ public class Util {
         }
     }
     
-    public static void getSavedFile(String content) {
+    public static void getSavedFile(String content, int part) {
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setDialogTitle("Save SQL");
         fileChooser.setFileFilter(new FileNameExtensionFilter("SQL *.sql", "sql"));
         if (fileChooser.showSaveDialog(fileChooser) == JFileChooser.APPROVE_OPTION) {
-            Util.saveTextFile(fileChooser.getSelectedFile().getAbsolutePath().toString(), content);
+            Util.saveTextFile(fileChooser.getSelectedFile().getAbsolutePath().toString(), content, part);
         }
     }
 
@@ -68,6 +68,23 @@ public class Util {
         }
     }
     
+    public static void saveTextFile(String patch, String text, int part) {
+        try {
+            String[] text_ln=text.split("\n");
+            int partSize = ((part==0)?text_ln.length:((int)text_ln.length/part));
+            String text_buf=text_ln[0]+" \n";
+            for (int i = 1; i <= text_ln.length; i++) {
+                text_buf+=text_ln[i]+"\n";
+                if (i%partSize==0 || text_ln.length==i) {
+                    saveTextFile(patch+"_"+i, text_buf.substring(0, text_buf.length()-2));
+                    text_buf=text_ln[0]+" \n";
+                }
+            }
+        } catch (Exception ex) {
+            System.err.println(ex.getLocalizedMessage());
+        }
+    }
+    
     public static void saveTextFile(String patch, String text) {
         try {
             File file = new File(patch);
@@ -82,24 +99,38 @@ public class Util {
         }
     }
 
-    public static void findImage(String id, List<FileBean> list, String cnt, String to, String prefib_min, String prefix_big, String wMin, String hMin, String wBig, String hBig, boolean rMin, boolean rBig) {
+    public static void findImage(String id, List<FileBean> list, String cnt, String to, String toSrc, String prefib_min, String prefix_big, String wMin, String hMin, String wBig, String hBig, boolean rMin, boolean rBig) {
         for (Iterator<FileBean> it = list.iterator(); it.hasNext();) {
             FileBean fileBean = it.next();
             if (fileBean.getId().equals(id)) {
-                String minFile=to+"/"+getMD5(cnt)+"_"+prefib_min+".jpg";
-                String bigFile=to+"/"+getMD5(cnt)+"_"+prefix_big+".jpg";
+                String fileXS=to+"/"+getMD5("Image"+cnt)+"_XS.jpg";
+                String fileS=to+"/"+getMD5("Image"+cnt)+"_S.jpg";
+                String fileM=to+"/"+getMD5("Image"+cnt)+"_M.jpg";
+                String fileL=to+"/"+getMD5("Image"+cnt)+"_L.jpg";
+                String fileXL=to+"/"+getMD5("Image"+cnt)+"_XL.jpg";
+                //String fileS=to+"/"+getMD5("Image"+cnt)+"_"+prefix_big+".jpg";
+                String genFile=to+"/"+getMD5("Image"+cnt)+"_Generic.jpg";
+                String srcFile=toSrc+"/"+getMD5("Image"+cnt)+".jpg";
                 
                 if (rMin) {
-                    Util.resizeImage(fileBean.getImage(), new File(minFile),Integer.parseInt(wMin),Integer.parseInt(hMin));
+                    Util.resizeImage(fileBean.getImage(), new File(fileXS),Integer.parseInt(wMin),Integer.parseInt(hMin));
+                    Util.resizeImage(fileBean.getImage(), new File(fileS),Integer.parseInt(wMin),Integer.parseInt(hMin));
+                    Util.resizeImage(fileBean.getImage(), new File(fileM),Integer.parseInt(wMin),Integer.parseInt(hMin));
                 } else {
-                    Util.copyFile(fileBean.getImage(), new File(minFile));
+                    Util.copyFile(fileBean.getImage(), new File(fileXS));
+                    Util.copyFile(fileBean.getImage(), new File(fileS));
+                    Util.copyFile(fileBean.getImage(), new File(fileM));
                 }
                 
                 if (rBig) {
-                    Util.resizeImage(fileBean.getImage(), new File(bigFile),Integer.parseInt(wBig),Integer.parseInt(hBig));
+                    Util.resizeImage(fileBean.getImage(), new File(fileL),Integer.parseInt(wBig),Integer.parseInt(hBig));
+                    Util.resizeImage(fileBean.getImage(), new File(fileXL),Integer.parseInt(wBig),Integer.parseInt(hBig));
                 } else {
-                    Util.copyFile(fileBean.getImage(), new File(bigFile));
+                    Util.copyFile(fileBean.getImage(), new File(fileL));
+                    Util.copyFile(fileBean.getImage(), new File(fileXL));
                 }
+                Util.copyFile(fileBean.getImage(), new File(genFile));
+                //Util.copyFile(fileBean.getImage(), new File(srcFile));
             }
         }
     }
@@ -184,7 +215,7 @@ public class Util {
                     case 'щ': tmp+="sch"; break;
                     case 'ъ': tmp+=""; break;
                     case 'ы': tmp+="y"; break;
-                    case 'ь': tmp+="'"; break;
+                    case 'ь': tmp+="-"; break;
                     case 'э': tmp+="eh"; break;
                     case 'ю': tmp+="yu"; break;
                     case 'я': tmp+="ya"; break;

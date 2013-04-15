@@ -5,7 +5,7 @@ CSV into Joomla K2 SQL & Image resize
 
 Get articles from DB concrete5:
 ```sql
-SELECT ci.cvName,ci.cvDescription,btc.content FROM CollectionVersionBlocks cvb RIGHT JOIN CollectionVersions ci ON ci.cID=cvb.cID RIGHT JOIN btContentLocal btc ON btc.bID=cvb.bID LEFT JOIN Pages pgs ON cvb.cID=pgs.cID WHERE pgs.cParentID=90 GROUP BY btc.content
+SELECT ci.cvName,ci.cvDescription,btc.content,ci.cvDatePublic FROM CollectionVersionBlocks cvb RIGHT JOIN CollectionVersions ci ON ci.cID=cvb.cID RIGHT JOIN btContentLocal btc ON btc.bID=cvb.bID LEFT JOIN Pages pgs ON cvb.cID=pgs.cID WHERE pgs.cParentID=90 GROUP BY btc.content
 ```
 
 CSV Articles format:

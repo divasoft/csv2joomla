@@ -64,14 +64,14 @@ public class Worker implements Runnable {
                 String string = it.next();
                 StringBean bean = new StringBean();
 
-                bean.setContent((Jsoup.parseBodyFragment(string.replace("<p>&nbsp;</p>", "").replaceAll("</p><p.*?>", "#")).text().trim().replace("     ", "").replace("  ", "").replace("   ", "")));
+                bean.setContent((Jsoup.parseBodyFragment(string.replace("<p>&nbsp;</p>", "").replace("<p> </p>", "").replaceAll("</p><p.*?>", "#")).text().trim().replace("     ", "").replace("  ", "").replace("   ", "").replace("<p></p>", "")));
                 bean.setK2Id(Integer.toString(cnt++));
                 if (!bean.getContent().equals("ERROR")) {
                     core.dbClear.add(bean);
                     if (core.copyImgButton.isSelected()) {
                         Matcher matcher = pattern.matcher(string);
                         if (matcher.find()) {
-                            Util.findImage(matcher.group(1), core.dbFiles, Integer.toString(cnt), core.imgToField.getText(), core.imageMinPrefix.getSelectedItem().toString(), core.imageBigPrefix.getSelectedItem().toString(), core.k2ImgMinW.getText(), core.k2ImgMinH.getText(), core.k2ImgBigW.getText(), core.k2ImgBigH.getText(), core.resizeMin.isSelected(), core.resizeBig.isSelected());
+                            Util.findImage(matcher.group(1), core.dbFiles, Integer.toString(cnt), core.imgToField.getText(), core.imgSrcToField.getText(), core.imageMinPrefix.getSelectedItem().toString(), core.imageBigPrefix.getSelectedItem().toString(), core.k2ImgMinW.getText(), core.k2ImgMinH.getText(), core.k2ImgBigW.getText(), core.k2ImgBigH.getText(), core.resizeMin.isSelected(), core.resizeBig.isSelected());
                         }
                     }
                 }

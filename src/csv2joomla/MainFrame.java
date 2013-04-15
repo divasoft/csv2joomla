@@ -25,7 +25,8 @@ public class MainFrame extends javax.swing.JFrame implements ICore {
      */
     public MainFrame() {
         initComponents();
-        imageBigPrefix.setSelectedIndex(2);
+        imageBigPrefix.setSelectedIndex(4);
+        imageMinPrefix.setSelectedIndex(2);
         try {
             System.out.println("<<< [Redirect System.out/System.err into DebugConsole] >>>");
 
@@ -135,6 +136,9 @@ public class MainFrame extends javax.swing.JFrame implements ICore {
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         patternSqlArea = new javax.swing.JTextArea();
+        imgSrcToField = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jSpinner1 = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CSV into Joomla K2 SQL & Image resize (c) Divasoft, inc.");
@@ -186,20 +190,20 @@ public class MainFrame extends javax.swing.JFrame implements ICore {
 
         jLabel2.setText("Joomla K2 item Start Num");
 
-        k2StartNumField.setText("100");
+        k2StartNumField.setText("300");
         k2StartNumField.setToolTipText("Integer");
 
-        imageMinPrefix.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "S", "M", "L", "XL" }));
+        imageMinPrefix.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "XS", "S", "M", "L", "XL" }));
 
         jLabel3.setText("Joomla K2 Image Min WH");
 
-        k2ImgMinH.setText("150");
+        k2ImgMinH.setText("200");
         k2ImgMinH.setToolTipText("height");
 
-        k2ImgBigH.setText("320");
+        k2ImgBigH.setText("400");
         k2ImgBigH.setToolTipText("height");
 
-        imageBigPrefix.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "S", "M", "L", "XL" }));
+        imageBigPrefix.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "XS", "S", "M", "L", "XL" }));
 
         jLabel4.setText("Joomla K2 Image Big WH");
 
@@ -208,10 +212,10 @@ public class MainFrame extends javax.swing.JFrame implements ICore {
         resizeMin.setSelected(true);
         resizeMin.setText("Resize Min");
 
-        k2ImgMinW.setText("150");
+        k2ImgMinW.setText("200");
         k2ImgMinW.setToolTipText("width");
 
-        k2ImgBigW.setText("240");
+        k2ImgBigW.setText("400");
         k2ImgBigW.setToolTipText("width");
 
         consoleArea.setColumns(20);
@@ -227,7 +231,7 @@ public class MainFrame extends javax.swing.JFrame implements ICore {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Console Out", jPanel1);
@@ -245,7 +249,7 @@ public class MainFrame extends javax.swing.JFrame implements ICore {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("SQL Head", jPanel2);
@@ -263,10 +267,15 @@ public class MainFrame extends javax.swing.JFrame implements ICore {
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("SQL pattern", jPanel3);
+
+        imgSrcToField.setText("d:\\_db\\SRC");
+        imgSrcToField.setToolTipText("Location output file");
+
+        jLabel5.setText("SRC");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -286,10 +295,12 @@ public class MainFrame extends javax.swing.JFrame implements ICore {
                             .addComponent(generatorBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(goBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -321,7 +332,11 @@ public class MainFrame extends javax.swing.JFrame implements ICore {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addComponent(copyImgButton)
-                                                    .addComponent(imgFromField, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                                    .addComponent(imgFromField, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jLabel5)
+                                        .addGap(35, 35, 35)
+                                        .addComponent(imgSrcToField, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(k2ImgMinW, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE)))))
@@ -351,10 +366,12 @@ public class MainFrame extends javax.swing.JFrame implements ICore {
                     .addComponent(copyImgButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel3)
-                        .addComponent(k2ImgMinW, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(k2ImgMinH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(k2ImgMinW, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(k2ImgMinH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(imageMinPrefix, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -367,8 +384,12 @@ public class MainFrame extends javax.swing.JFrame implements ICore {
                             .addComponent(k2ImgBigH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(k2ImgBigW, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4)
-                            .addComponent(imgToField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap())
+                            .addComponent(imgToField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(imgSrcToField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5)
+                            .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
         );
 
         pack();
@@ -387,7 +408,7 @@ public class MainFrame extends javax.swing.JFrame implements ICore {
     }//GEN-LAST:event_pathImgBtnActionPerformed
 
     private void generatorBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generatorBtnActionPerformed
-        Util.getSavedFile(SQL_READY);
+        Util.getSavedFile(SQL_READY,Integer.parseInt(jSpinner1.getValue().toString()));
     }//GEN-LAST:event_generatorBtnActionPerformed
 
     /**
@@ -433,17 +454,20 @@ public class MainFrame extends javax.swing.JFrame implements ICore {
     public javax.swing.JComboBox imageBigPrefix;
     public javax.swing.JComboBox imageMinPrefix;
     public javax.swing.JTextField imgFromField;
+    public javax.swing.JTextField imgSrcToField;
     public javax.swing.JTextField imgToField;
     public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel2;
     public javax.swing.JLabel jLabel3;
     public javax.swing.JLabel jLabel4;
+    public javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JSpinner jSpinner1;
     public javax.swing.JTabbedPane jTabbedPane1;
     public javax.swing.JTextField k2CatId;
     public javax.swing.JTextField k2ImgBigH;

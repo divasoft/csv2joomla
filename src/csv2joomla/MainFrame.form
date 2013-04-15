@@ -7,6 +7,7 @@
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -40,10 +41,13 @@
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="jLabel4" max="32767" attributes="0"/>
-                          <Component id="jLabel3" alignment="0" pref="121" max="32767" attributes="0"/>
-                          <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="jLabel4" max="32767" attributes="0"/>
+                              <Component id="jLabel3" alignment="0" pref="121" max="32767" attributes="0"/>
+                              <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="jSpinner1" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -86,6 +90,11 @@
                                           </Group>
                                       </Group>
                                   </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="imgSrcToField" min="-2" pref="112" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                           <Group type="102" attributes="0">
@@ -126,12 +135,15 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="k2ImgMinW" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="k2ImgMinH" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="k2ImgMinW" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="k2ImgMinH" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="imageMinPrefix" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="resizeMin" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -146,9 +158,14 @@
                           <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="imgToField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace pref="6" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="imgSrcToField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jSpinner1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -255,7 +272,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="k2StartNumField">
       <Properties>
-        <Property name="text" type="java.lang.String" value="100"/>
+        <Property name="text" type="java.lang.String" value="300"/>
         <Property name="toolTipText" type="java.lang.String" value="Integer"/>
       </Properties>
       <AuxValues>
@@ -265,11 +282,12 @@
     <Component class="javax.swing.JComboBox" name="imageMinPrefix">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="S"/>
-            <StringItem index="1" value="M"/>
-            <StringItem index="2" value="L"/>
-            <StringItem index="3" value="XL"/>
+          <StringArray count="5">
+            <StringItem index="0" value="XS"/>
+            <StringItem index="1" value="S"/>
+            <StringItem index="2" value="M"/>
+            <StringItem index="3" value="L"/>
+            <StringItem index="4" value="XL"/>
           </StringArray>
         </Property>
       </Properties>
@@ -287,7 +305,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="k2ImgMinH">
       <Properties>
-        <Property name="text" type="java.lang.String" value="150"/>
+        <Property name="text" type="java.lang.String" value="200"/>
         <Property name="toolTipText" type="java.lang.String" value="height"/>
       </Properties>
       <AuxValues>
@@ -296,7 +314,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="k2ImgBigH">
       <Properties>
-        <Property name="text" type="java.lang.String" value="320"/>
+        <Property name="text" type="java.lang.String" value="400"/>
         <Property name="toolTipText" type="java.lang.String" value="height"/>
       </Properties>
       <AuxValues>
@@ -306,11 +324,12 @@
     <Component class="javax.swing.JComboBox" name="imageBigPrefix">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="S"/>
-            <StringItem index="1" value="M"/>
-            <StringItem index="2" value="L"/>
-            <StringItem index="3" value="XL"/>
+          <StringArray count="5">
+            <StringItem index="0" value="XS"/>
+            <StringItem index="1" value="S"/>
+            <StringItem index="2" value="M"/>
+            <StringItem index="3" value="L"/>
+            <StringItem index="4" value="XL"/>
           </StringArray>
         </Property>
       </Properties>
@@ -345,7 +364,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="k2ImgMinW">
       <Properties>
-        <Property name="text" type="java.lang.String" value="150"/>
+        <Property name="text" type="java.lang.String" value="200"/>
         <Property name="toolTipText" type="java.lang.String" value="width"/>
       </Properties>
       <AuxValues>
@@ -354,7 +373,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="k2ImgBigW">
       <Properties>
-        <Property name="text" type="java.lang.String" value="240"/>
+        <Property name="text" type="java.lang.String" value="400"/>
         <Property name="toolTipText" type="java.lang.String" value="width"/>
       </Properties>
       <AuxValues>
@@ -390,7 +409,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane1" alignment="0" pref="153" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" alignment="0" pref="136" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -435,7 +454,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane3" alignment="0" pref="153" max="32767" attributes="0"/>
+                  <Component id="jScrollPane3" alignment="0" pref="136" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -478,7 +497,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane2" alignment="0" pref="153" max="32767" attributes="0"/>
+                  <Component id="jScrollPane2" alignment="0" pref="136" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -506,5 +525,24 @@
         </Container>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JTextField" name="imgSrcToField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="d:\u005c_db\u005cSRC" containsInvalidXMLChars="true"/>
+        <Property name="toolTipText" type="java.lang.String" value="Location output file"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel5">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="SRC"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JSpinner" name="jSpinner1">
+    </Component>
   </SubComponents>
 </Form>
