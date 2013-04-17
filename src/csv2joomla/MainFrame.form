@@ -24,84 +24,52 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jTabbedPane1" max="32767" attributes="0"/>
-                  <Component id="progressBar" alignment="0" max="32767" attributes="0"/>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="pathImgBtn" alignment="0" max="32767" attributes="0"/>
-                          <Component id="pathDBtn" max="32767" attributes="0"/>
-                      </Group>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="generatorBtn" max="32767" attributes="0"/>
-                          <Component id="goBtn" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jTabbedPane1" alignment="1" pref="0" max="32767" attributes="0"/>
+                          <Component id="progressBar" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="pathImgBtn" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="pathDBtn" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="goBtn" max="32767" attributes="0"/>
+                                  <Component id="generatorBtn" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="jLabel4" max="32767" attributes="0"/>
-                              <Component id="jLabel3" alignment="0" pref="121" max="32767" attributes="0"/>
-                              <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="jLabel1" min="-2" pref="121" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="k2CatId" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="k2StartNumField" min="-2" pref="52" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jSpinner1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="236" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="jTabbedPane2" min="-2" pref="280" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="copyAllImgButton" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="copyImgButton" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jSpinner1" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="k2CatId" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="k2ImgBigW" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="k2StartNumField" min="-2" pref="52" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="k2ImgBigH" min="-2" pref="50" max="-2" attributes="0"/>
-                                          <Component id="k2ImgMinH" min="-2" pref="50" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="imageBigPrefix" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="imageMinPrefix" alignment="0" min="-2" pref="61" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <Component id="resizeBig" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="imgToField" min="-2" pref="112" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Component id="resizeMin" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace pref="33" max="32767" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="copyImgButton" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="imgFromField" min="-2" pref="112" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                                      <Component id="imgSrcToField" min="-2" pref="112" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="k2ImgMinW" min="-2" pref="50" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -131,40 +99,20 @@
                   <Component id="k2CatId" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="k2StartNumField" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="copyImgButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jSpinner1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Group type="102" attributes="0">
+                      <Component id="jTabbedPane2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="k2ImgMinW" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="k2ImgMinH" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="imageMinPrefix" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="resizeMin" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="imgFromField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="imageBigPrefix" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="resizeBig" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="k2ImgBigH" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="k2ImgBigW" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="imgToField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="6" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="imgSrcToField" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jSpinner1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="copyImgButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="copyAllImgButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+                  <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -223,28 +171,10 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JTextField" name="imgToField">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="d:\u005c_db\u005cREADY" containsInvalidXMLChars="true"/>
-        <Property name="toolTipText" type="java.lang.String" value="Location output file"/>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JTextField" name="imgFromField">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="d:\u005c_db\u005cIMG" containsInvalidXMLChars="true"/>
-        <Property name="toolTipText" type="java.lang.String" value="Location original images"/>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-      </AuxValues>
-    </Component>
     <Component class="javax.swing.JCheckBox" name="copyImgButton">
       <Properties>
         <Property name="selected" type="boolean" value="true"/>
-        <Property name="text" type="java.lang.String" value="CopyFiles"/>
+        <Property name="text" type="java.lang.String" value="CopySRCFiles"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -279,102 +209,9 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JComboBox" name="imageMinPrefix">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="5">
-            <StringItem index="0" value="XS"/>
-            <StringItem index="1" value="S"/>
-            <StringItem index="2" value="M"/>
-            <StringItem index="3" value="L"/>
-            <StringItem index="4" value="XL"/>
-          </StringArray>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-      </AuxValues>
-    </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Joomla K2 Image Min WH"/>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JTextField" name="k2ImgMinH">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="200"/>
-        <Property name="toolTipText" type="java.lang.String" value="height"/>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JTextField" name="k2ImgBigH">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="400"/>
-        <Property name="toolTipText" type="java.lang.String" value="height"/>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="imageBigPrefix">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="5">
-            <StringItem index="0" value="XS"/>
-            <StringItem index="1" value="S"/>
-            <StringItem index="2" value="M"/>
-            <StringItem index="3" value="L"/>
-            <StringItem index="4" value="XL"/>
-          </StringArray>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel4">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Joomla K2 Image Big WH"/>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="resizeBig">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Resize Big"/>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="resizeMin">
-      <Properties>
-        <Property name="selected" type="boolean" value="true"/>
-        <Property name="text" type="java.lang.String" value="Resize Min"/>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JTextField" name="k2ImgMinW">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="200"/>
-        <Property name="toolTipText" type="java.lang.String" value="width"/>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JTextField" name="k2ImgBigW">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="400"/>
-        <Property name="toolTipText" type="java.lang.String" value="width"/>
+        <Property name="text" type="java.lang.String" value="Split sql out file"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -404,12 +241,12 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane1" alignment="1" pref="515" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" alignment="1" pref="687" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane1" alignment="0" pref="136" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" alignment="0" pref="182" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -449,12 +286,12 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane3" alignment="0" pref="515" max="32767" attributes="0"/>
+                  <Component id="jScrollPane3" alignment="0" pref="687" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane3" alignment="0" pref="136" max="32767" attributes="0"/>
+                  <Component id="jScrollPane3" alignment="0" pref="182" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -492,12 +329,12 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane2" alignment="1" pref="515" max="32767" attributes="0"/>
+                  <Component id="jScrollPane2" alignment="1" pref="687" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane2" alignment="0" pref="136" max="32767" attributes="0"/>
+                  <Component id="jScrollPane2" alignment="0" pref="182" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -513,7 +350,7 @@
                   <Properties>
                     <Property name="columns" type="int" value="20"/>
                     <Property name="rows" type="int" value="5"/>
-                    <Property name="text" type="java.lang.String" value="({id}, &apos;{title}&apos;, &apos;{alias}&apos;, {catid}, 1, &apos;{introtext}&apos;, &apos;{fulltext}&apos;, NULL, NULL, &apos;[]&apos;, &apos;&apos;, &apos;2013-02-19 11:02:15&apos;, 653, &apos;&apos;, 653, &apos;2013-02-20 11:45:01&apos;, &apos;0000-00-00 00:00:00&apos;, 0, &apos;2013-02-19 11:02:15&apos;, &apos;0000-00-00 00:00:00&apos;, 0, 1, {ordering}, 0, 0, &apos;&apos;, &apos;&apos;, &apos;&apos;, &apos;&apos;, 0, &apos;{&quot;catItemTitle&quot;:&quot;&quot;,&quot;catItemTitleLinked&quot;:&quot;&quot;,&quot;catItemFeaturedNotice&quot;:&quot;&quot;,&quot;catItemAuthor&quot;:&quot;&quot;,&quot;catItemDateCreated&quot;:&quot;&quot;,&quot;catItemRating&quot;:&quot;&quot;,&quot;catItemImage&quot;:&quot;&quot;,&quot;catItemIntroText&quot;:&quot;&quot;,&quot;catItemExtraFields&quot;:&quot;&quot;,&quot;catItemHits&quot;:&quot;&quot;,&quot;catItemCategory&quot;:&quot;&quot;,&quot;catItemTags&quot;:&quot;&quot;,&quot;catItemAttachments&quot;:&quot;&quot;,&quot;catItemAttachmentsCounter&quot;:&quot;&quot;,&quot;catItemVideo&quot;:&quot;&quot;,&quot;catItemVideoWidth&quot;:&quot;&quot;,&quot;catItemVideoHeight&quot;:&quot;&quot;,&quot;catItemAudioWidth&quot;:&quot;&quot;,&quot;catItemAudioHeight&quot;:&quot;&quot;,&quot;catItemVideoAutoPlay&quot;:&quot;&quot;,&quot;catItemImageGallery&quot;:&quot;&quot;,&quot;catItemDateModified&quot;:&quot;&quot;,&quot;catItemReadMore&quot;:&quot;&quot;,&quot;catItemCommentsAnchor&quot;:&quot;&quot;,&quot;catItemK2Plugins&quot;:&quot;&quot;,&quot;itemDateCreated&quot;:&quot;&quot;,&quot;itemTitle&quot;:&quot;&quot;,&quot;itemFeaturedNotice&quot;:&quot;&quot;,&quot;itemAuthor&quot;:&quot;&quot;,&quot;itemFontResizer&quot;:&quot;&quot;,&quot;itemPrintButton&quot;:&quot;&quot;,&quot;itemEmailButton&quot;:&quot;&quot;,&quot;itemSocialButton&quot;:&quot;&quot;,&quot;itemVideoAnchor&quot;:&quot;&quot;,&quot;itemImageGalleryAnchor&quot;:&quot;&quot;,&quot;itemCommentsAnchor&quot;:&quot;&quot;,&quot;itemRating&quot;:&quot;&quot;,&quot;itemImage&quot;:&quot;&quot;,&quot;itemImgSize&quot;:&quot;&quot;,&quot;itemImageMainCaption&quot;:&quot;&quot;,&quot;itemImageMainCredits&quot;:&quot;&quot;,&quot;itemIntroText&quot;:&quot;&quot;,&quot;itemFullText&quot;:&quot;&quot;,&quot;itemExtraFields&quot;:&quot;&quot;,&quot;itemDateModified&quot;:&quot;&quot;,&quot;itemHits&quot;:&quot;&quot;,&quot;itemCategory&quot;:&quot;&quot;,&quot;itemTags&quot;:&quot;&quot;,&quot;itemAttachments&quot;:&quot;&quot;,&quot;itemAttachmentsCounter&quot;:&quot;&quot;,&quot;itemVideo&quot;:&quot;&quot;,&quot;itemVideoWidth&quot;:&quot;&quot;,&quot;itemVideoHeight&quot;:&quot;&quot;,&quot;itemAudioWidth&quot;:&quot;&quot;,&quot;itemAudioHeight&quot;:&quot;&quot;,&quot;itemVideoAutoPlay&quot;:&quot;&quot;,&quot;itemVideoCaption&quot;:&quot;&quot;,&quot;itemVideoCredits&quot;:&quot;&quot;,&quot;itemImageGallery&quot;:&quot;&quot;,&quot;itemNavigation&quot;:&quot;&quot;,&quot;itemComments&quot;:&quot;&quot;,&quot;itemTwitterButton&quot;:&quot;&quot;,&quot;itemFacebookButton&quot;:&quot;&quot;,&quot;itemGooglePlusOneButton&quot;:&quot;&quot;,&quot;itemAuthorBlock&quot;:&quot;&quot;,&quot;itemAuthorImage&quot;:&quot;&quot;,&quot;itemAuthorDescription&quot;:&quot;&quot;,&quot;itemAuthorURL&quot;:&quot;&quot;,&quot;itemAuthorEmail&quot;:&quot;&quot;,&quot;itemAuthorLatest&quot;:&quot;&quot;,&quot;itemAuthorLatestLimit&quot;:&quot;&quot;,&quot;itemRelated&quot;:&quot;&quot;,&quot;itemRelatedLimit&quot;:&quot;&quot;,&quot;itemRelatedTitle&quot;:&quot;&quot;,&quot;itemRelatedCategory&quot;:&quot;&quot;,&quot;itemRelatedImageSize&quot;:&quot;&quot;,&quot;itemRelatedIntrotext&quot;:&quot;&quot;,&quot;itemRelatedFulltext&quot;:&quot;&quot;,&quot;itemRelatedAuthor&quot;:&quot;&quot;,&quot;itemRelatedMedia&quot;:&quot;&quot;,&quot;itemRelatedImageGallery&quot;:&quot;&quot;,&quot;itemK2Plugins&quot;:&quot;&quot;}&apos;, &apos;&apos;, &apos;robots=\u005cnauthor=&apos;, &apos;&apos;, &apos;&apos;, &apos;*&apos;)" containsInvalidXMLChars="true"/>
+                    <Property name="text" type="java.lang.String" value="({id}, &apos;{title}&apos;, &apos;{alias}&apos;, {catid}, 1, &apos;{introtext}&apos;, &apos;{fulltext}&apos;, NULL, NULL, &apos;[]&apos;, &apos;&apos;, &apos;{date_add}&apos;, 653, &apos;&apos;, 653, &apos;{date_add}&apos;, &apos;0000-00-00 00:00:00&apos;, 0, &apos;2013-02-19 11:02:15&apos;, &apos;0000-00-00 00:00:00&apos;, 0, 1, {ordering}, 0, 0, &apos;&apos;, &apos;&apos;, &apos;&apos;, &apos;&apos;, 0, &apos;{&quot;catItemTitle&quot;:&quot;&quot;,&quot;catItemTitleLinked&quot;:&quot;&quot;,&quot;catItemFeaturedNotice&quot;:&quot;&quot;,&quot;catItemAuthor&quot;:&quot;&quot;,&quot;catItemDateCreated&quot;:&quot;&quot;,&quot;catItemRating&quot;:&quot;&quot;,&quot;catItemImage&quot;:&quot;&quot;,&quot;catItemIntroText&quot;:&quot;&quot;,&quot;catItemExtraFields&quot;:&quot;&quot;,&quot;catItemHits&quot;:&quot;&quot;,&quot;catItemCategory&quot;:&quot;&quot;,&quot;catItemTags&quot;:&quot;&quot;,&quot;catItemAttachments&quot;:&quot;&quot;,&quot;catItemAttachmentsCounter&quot;:&quot;&quot;,&quot;catItemVideo&quot;:&quot;&quot;,&quot;catItemVideoWidth&quot;:&quot;&quot;,&quot;catItemVideoHeight&quot;:&quot;&quot;,&quot;catItemAudioWidth&quot;:&quot;&quot;,&quot;catItemAudioHeight&quot;:&quot;&quot;,&quot;catItemVideoAutoPlay&quot;:&quot;&quot;,&quot;catItemImageGallery&quot;:&quot;&quot;,&quot;catItemDateModified&quot;:&quot;&quot;,&quot;catItemReadMore&quot;:&quot;&quot;,&quot;catItemCommentsAnchor&quot;:&quot;&quot;,&quot;catItemK2Plugins&quot;:&quot;&quot;,&quot;itemDateCreated&quot;:&quot;&quot;,&quot;itemTitle&quot;:&quot;&quot;,&quot;itemFeaturedNotice&quot;:&quot;&quot;,&quot;itemAuthor&quot;:&quot;&quot;,&quot;itemFontResizer&quot;:&quot;&quot;,&quot;itemPrintButton&quot;:&quot;&quot;,&quot;itemEmailButton&quot;:&quot;&quot;,&quot;itemSocialButton&quot;:&quot;&quot;,&quot;itemVideoAnchor&quot;:&quot;&quot;,&quot;itemImageGalleryAnchor&quot;:&quot;&quot;,&quot;itemCommentsAnchor&quot;:&quot;&quot;,&quot;itemRating&quot;:&quot;&quot;,&quot;itemImage&quot;:&quot;&quot;,&quot;itemImgSize&quot;:&quot;&quot;,&quot;itemImageMainCaption&quot;:&quot;&quot;,&quot;itemImageMainCredits&quot;:&quot;&quot;,&quot;itemIntroText&quot;:&quot;&quot;,&quot;itemFullText&quot;:&quot;&quot;,&quot;itemExtraFields&quot;:&quot;&quot;,&quot;itemDateModified&quot;:&quot;&quot;,&quot;itemHits&quot;:&quot;&quot;,&quot;itemCategory&quot;:&quot;&quot;,&quot;itemTags&quot;:&quot;&quot;,&quot;itemAttachments&quot;:&quot;&quot;,&quot;itemAttachmentsCounter&quot;:&quot;&quot;,&quot;itemVideo&quot;:&quot;&quot;,&quot;itemVideoWidth&quot;:&quot;&quot;,&quot;itemVideoHeight&quot;:&quot;&quot;,&quot;itemAudioWidth&quot;:&quot;&quot;,&quot;itemAudioHeight&quot;:&quot;&quot;,&quot;itemVideoAutoPlay&quot;:&quot;&quot;,&quot;itemVideoCaption&quot;:&quot;&quot;,&quot;itemVideoCredits&quot;:&quot;&quot;,&quot;itemImageGallery&quot;:&quot;&quot;,&quot;itemNavigation&quot;:&quot;&quot;,&quot;itemComments&quot;:&quot;&quot;,&quot;itemTwitterButton&quot;:&quot;&quot;,&quot;itemFacebookButton&quot;:&quot;&quot;,&quot;itemGooglePlusOneButton&quot;:&quot;&quot;,&quot;itemAuthorBlock&quot;:&quot;&quot;,&quot;itemAuthorImage&quot;:&quot;&quot;,&quot;itemAuthorDescription&quot;:&quot;&quot;,&quot;itemAuthorURL&quot;:&quot;&quot;,&quot;itemAuthorEmail&quot;:&quot;&quot;,&quot;itemAuthorLatest&quot;:&quot;&quot;,&quot;itemAuthorLatestLimit&quot;:&quot;&quot;,&quot;itemRelated&quot;:&quot;&quot;,&quot;itemRelatedLimit&quot;:&quot;&quot;,&quot;itemRelatedTitle&quot;:&quot;&quot;,&quot;itemRelatedCategory&quot;:&quot;&quot;,&quot;itemRelatedImageSize&quot;:&quot;&quot;,&quot;itemRelatedIntrotext&quot;:&quot;&quot;,&quot;itemRelatedFulltext&quot;:&quot;&quot;,&quot;itemRelatedAuthor&quot;:&quot;&quot;,&quot;itemRelatedMedia&quot;:&quot;&quot;,&quot;itemRelatedImageGallery&quot;:&quot;&quot;,&quot;itemK2Plugins&quot;:&quot;&quot;}&apos;, &apos;&apos;, &apos;robots=\u005cnauthor=&apos;, &apos;&apos;, &apos;&apos;, &apos;*&apos;)" containsInvalidXMLChars="true"/>
                   </Properties>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -525,24 +362,532 @@
         </Container>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JTextField" name="imgSrcToField">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="d:\u005c_db\u005cSRC" containsInvalidXMLChars="true"/>
-        <Property name="toolTipText" type="java.lang.String" value="Location output file"/>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel5">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="SRC"/>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-      </AuxValues>
-    </Component>
     <Component class="javax.swing.JSpinner" name="jSpinner1">
+    </Component>
+    <Container class="javax.swing.JTabbedPane" name="jTabbedPane2">
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="panelXS">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="XS">
+                <Property name="tabTitle" type="java.lang.String" value="XS"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel4" min="-2" pref="42" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="k2ImgXSW" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel6" min="-2" pref="42" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="k2ImgXSH" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="resizeXS" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="10" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="11" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="k2ImgXSH" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="k2ImgXSW" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="resizeXS" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabel4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Width"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JTextField" name="k2ImgXSW">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="100"/>
+                <Property name="toolTipText" type="java.lang.String" value="width"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JTextField" name="k2ImgXSH">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="100"/>
+                <Property name="toolTipText" type="java.lang.String" value="height"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="resizeXS">
+              <Properties>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="Resize"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel6">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Height"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="panelS">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="S">
+                <Property name="tabTitle" type="java.lang.String" value="S"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel7" min="-2" pref="42" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="k2ImgSW" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel8" min="-2" pref="42" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="k2ImgSH" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="resizeS" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="10" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="11" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="k2ImgSH" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="k2ImgSW" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="resizeS" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabel7">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Width"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JTextField" name="k2ImgSW">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="150"/>
+                <Property name="toolTipText" type="java.lang.String" value="width"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JTextField" name="k2ImgSH">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="150"/>
+                <Property name="toolTipText" type="java.lang.String" value="height"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="resizeS">
+              <Properties>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="Resize"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel8">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Height"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="panelM">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="M">
+                <Property name="tabTitle" type="java.lang.String" value="M"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel9" min="-2" pref="42" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="k2ImgMW" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel10" min="-2" pref="42" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="k2ImgMH" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="resizeM" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="10" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="11" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="k2ImgMH" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="k2ImgMW" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="resizeM" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabel9">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Width"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JTextField" name="k2ImgMW">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="200"/>
+                <Property name="toolTipText" type="java.lang.String" value="width"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JTextField" name="k2ImgMH">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="200"/>
+                <Property name="toolTipText" type="java.lang.String" value="height"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="resizeM">
+              <Properties>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="Resize"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel10">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Height"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="panelL">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="L">
+                <Property name="tabTitle" type="java.lang.String" value="L"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel11" min="-2" pref="42" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="k2ImgLW" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel12" min="-2" pref="42" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="k2ImgLH" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="resizeL" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="10" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="11" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="k2ImgLH" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="k2ImgLW" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="resizeL" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabel11">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Width"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JTextField" name="k2ImgLW">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="300"/>
+                <Property name="toolTipText" type="java.lang.String" value="width"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JTextField" name="k2ImgLH">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="300"/>
+                <Property name="toolTipText" type="java.lang.String" value="height"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="resizeL">
+              <Properties>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="Resize"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel12">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Height"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="panelXL">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="XL">
+                <Property name="tabTitle" type="java.lang.String" value="XL"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel13" min="-2" pref="42" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="k2ImgXLW" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel14" min="-2" pref="42" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="k2ImgXLH" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="resizeXL" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="10" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="11" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="k2ImgXLH" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="k2ImgXLW" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="resizeXL" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabel13">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Width"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JTextField" name="k2ImgXLW">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="400"/>
+                <Property name="toolTipText" type="java.lang.String" value="width"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JTextField" name="k2ImgXLH">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="400"/>
+                <Property name="toolTipText" type="java.lang.String" value="height"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="resizeXL">
+              <Properties>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="Resize"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel14">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Height"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel4">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Out dir&apos;s"/>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="imgToField" alignment="1" min="-2" pref="112" max="-2" attributes="0"/>
+                      <Component id="imgFromField" alignment="1" min="-2" pref="112" max="-2" attributes="0"/>
+                      <Component id="imgSrcToField" alignment="1" min="-2" pref="112" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Component id="imgFromField" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="imgToField" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="imgSrcToField" min="-2" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JTextField" name="imgSrcToField">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="d:\u005c_db\u005cSRC" containsInvalidXMLChars="true"/>
+            <Property name="toolTipText" type="java.lang.String" value="Location output file"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JTextField" name="imgToField">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="d:\u005c_db\u005cREADY" containsInvalidXMLChars="true"/>
+            <Property name="toolTipText" type="java.lang.String" value="Location output file"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JTextField" name="imgFromField">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="d:\u005c_db\u005cIMG" containsInvalidXMLChars="true"/>
+            <Property name="toolTipText" type="java.lang.String" value="Location original images"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JCheckBox" name="copyAllImgButton">
+      <Properties>
+        <Property name="selected" type="boolean" value="true"/>
+        <Property name="text" type="java.lang.String" value="CopyImages"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>

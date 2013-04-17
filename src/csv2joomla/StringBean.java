@@ -45,7 +45,7 @@ public class StringBean {
             } else {
                 this.setTitle(str[0]);
                 this.setIntro(str[1]);
-                this.content="<p>"+str[2].replace("#", "</p><p>").replace("  ", "").replace("<p></p>", "").replace("<p> </p>", "").replace("<p>·</p>", "") +"</p>";
+                this.content="<p>"+str[2].replace("#", "</p><p>").replace("  ", "").replace("<p></p>", "").replace("<p> </p>", "").replace("<p>·</p>", "").replace("« ", "«") +"</p>";
                 this.setDate(str[3]);
             }
         } else {

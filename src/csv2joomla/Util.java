@@ -98,39 +98,41 @@ public class Util {
             System.err.println(ex.getLocalizedMessage());
         }
     }
+    
+    private static void resizeOrCopy(File src, String out, String w, String h, boolean resize) {
+        if (resize) {
+            //Util.resizeImage(src, new File(out),Integer.parseInt(w),Integer.parseInt(h));
+            Util.resizeImage(src, new File(out),Integer.parseInt(h));
+        } else {
+            Util.copyFile(src, new File(out));
+        }
+    }
 
-    public static void findImage(String id, List<FileBean> list, String cnt, String to, String toSrc, String prefib_min, String prefix_big, String wMin, String hMin, String wBig, String hBig, boolean rMin, boolean rBig) {
-        for (Iterator<FileBean> it = list.iterator(); it.hasNext();) {
+    public static void findImage(String id, String cnt, MainFrame core) {
+        String to = core.imgToField.getText().trim();
+        String toSrc = core.imgSrcToField.getText().trim();
+        for (Iterator<FileBean> it = core.dbFiles.iterator(); it.hasNext();) {
             FileBean fileBean = it.next();
             if (fileBean.getId().equals(id)) {
-                String fileXS=to+"/"+getMD5("Image"+cnt)+"_XS.jpg";
-                String fileS=to+"/"+getMD5("Image"+cnt)+"_S.jpg";
-                String fileM=to+"/"+getMD5("Image"+cnt)+"_M.jpg";
-                String fileL=to+"/"+getMD5("Image"+cnt)+"_L.jpg";
-                String fileXL=to+"/"+getMD5("Image"+cnt)+"_XL.jpg";
+                String fileXS = to + "/" + getMD5("Image" + cnt) + "_XS.jpg";
+                String fileS = to + "/" + getMD5("Image" + cnt) + "_S.jpg";
+                String fileM = to + "/" + getMD5("Image" + cnt) + "_M.jpg";
+                String fileL = to + "/" + getMD5("Image" + cnt) + "_L.jpg";
+                String fileXL = to + "/" + getMD5("Image" + cnt) + "_XL.jpg";
                 //String fileS=to+"/"+getMD5("Image"+cnt)+"_"+prefix_big+".jpg";
-                String genFile=to+"/"+getMD5("Image"+cnt)+"_Generic.jpg";
-                String srcFile=toSrc+"/"+getMD5("Image"+cnt)+".jpg";
-                
-                if (rMin) {
-                    Util.resizeImage(fileBean.getImage(), new File(fileXS),Integer.parseInt(wMin),Integer.parseInt(hMin));
-                    Util.resizeImage(fileBean.getImage(), new File(fileS),Integer.parseInt(wMin),Integer.parseInt(hMin));
-                    Util.resizeImage(fileBean.getImage(), new File(fileM),Integer.parseInt(wMin),Integer.parseInt(hMin));
-                } else {
-                    Util.copyFile(fileBean.getImage(), new File(fileXS));
-                    Util.copyFile(fileBean.getImage(), new File(fileS));
-                    Util.copyFile(fileBean.getImage(), new File(fileM));
-                }
-                
-                if (rBig) {
-                    Util.resizeImage(fileBean.getImage(), new File(fileL),Integer.parseInt(wBig),Integer.parseInt(hBig));
-                    Util.resizeImage(fileBean.getImage(), new File(fileXL),Integer.parseInt(wBig),Integer.parseInt(hBig));
-                } else {
-                    Util.copyFile(fileBean.getImage(), new File(fileL));
-                    Util.copyFile(fileBean.getImage(), new File(fileXL));
-                }
+                String genFile = to + "/" + getMD5("Image" + cnt) + "_Generic.jpg";
+                String srcFile = toSrc + "/" + getMD5("Image" + cnt) + ".jpg";
+
+                resizeOrCopy(fileBean.getImage(), fileXS, core.k2ImgXSW.getText(), core.k2ImgXSH.getText(), core.resizeXS.isSelected());
+                resizeOrCopy(fileBean.getImage(), fileS, core.k2ImgSW.getText(), core.k2ImgSH.getText(), core.resizeS.isSelected());
+                resizeOrCopy(fileBean.getImage(), fileM, core.k2ImgMW.getText(), core.k2ImgMH.getText(), core.resizeM.isSelected());
+                resizeOrCopy(fileBean.getImage(), fileL, core.k2ImgLW.getText(), core.k2ImgLH.getText(), core.resizeL.isSelected());
+                resizeOrCopy(fileBean.getImage(), fileXL, core.k2ImgXLW.getText(), core.k2ImgXLH.getText(), core.resizeXL.isSelected());
+
                 Util.copyFile(fileBean.getImage(), new File(genFile));
-                //Util.copyFile(fileBean.getImage(), new File(srcFile));
+                if (core.copyImgButton.isSelected()) {
+                    Util.copyFile(fileBean.getImage(), new File(srcFile));
+                }
             }
         }
     }
@@ -146,7 +148,17 @@ public class Util {
             //ex.printStackTrace();
         }
     }
-
+    public static void resizeImage(File image, File to, int h) {
+        try {
+            BufferedImage img = ImageIO.read(image);
+            BufferedImage res_img = Scalr.resize(img, Scalr.Method.ULTRA_QUALITY,Scalr.Mode.FIT_TO_HEIGHT,h);
+            ImageIO.write(res_img, "jpg", to);
+            System.out.println("IMG_H["+h+"]: "+image.toPath()+"->"+to.toPath());
+        } catch (Exception ex) {
+            System.err.println(ex.getLocalizedMessage());
+            //ex.printStackTrace();
+        }
+    }
     /**
      *
      * @param str getMD5 by string
