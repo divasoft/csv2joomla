@@ -15,19 +15,19 @@ public class StringBean {
     }
 
     public StringBean(String content, String intro, String title, String k2Id, String date) {
-        this.content = content;
-        this.intro = intro;
-        this.title = title;
-        this.k2Id = k2Id;
-        this.date = date;
+        this.content = Util.clearP(content.trim());
+        setIntro(intro);
+        setTitle(title);
+        this.k2Id = k2Id.trim();
+        this.date = date.trim();
     }
 
     public String getIntro() {
         return intro;
     }
 
-    public void setIntro(String intro) {
-        this.intro =  "<p>" + intro.replace("'", "").trim() + "</p>";
+    private void setIntro(String intro) {
+        this.intro =  "<p>" + Util.clearP(intro).trim() + "</p>";
     }
 
     public String getContent() {
@@ -45,7 +45,7 @@ public class StringBean {
             } else {
                 this.setTitle(str[0]);
                 this.setIntro(str[1]);
-                this.content="<p>"+str[2].replace("#", "</p><p>").replace("  ", "").replace("<p></p>", "").replace("<p> </p>", "").replace("<p>·</p>", "").replace("« ", "«") +"</p>";
+                this.content="<p>"+Util.clearP(str[2].replace("#", "</p><p>")) +"</p>";
                 this.setDate(str[3]);
             }
         } else {
@@ -75,8 +75,8 @@ public class StringBean {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title.replace("'", "").replace("« ", "«").trim();
+    private void setTitle(String title) {
+        this.title = title.replace("« ", "«").trim();
     }
 
     public String getDate() {

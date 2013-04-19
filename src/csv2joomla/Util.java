@@ -38,7 +38,7 @@ public class Util {
             jButton.setText(fileChooser.getSelectedFile().getAbsolutePath().toString());
         }
     }
-    
+
     public static void getSavedFile(String content, int part) {
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setDialogTitle("Save SQL");
@@ -68,23 +68,33 @@ public class Util {
         }
     }
     
+    public static String getTextFile(String patch) {
+        List<String> body = readTextFile(patch);
+        String ret = "";
+        for (Iterator<String> it = body.iterator(); it.hasNext();) {
+            String string = it.next();
+            ret+=string;
+        }
+        return ret.trim();
+    }
+
     public static void saveTextFile(String patch, String text, int part) {
         try {
-            String[] text_ln=text.split("\n");
-            int partSize = ((part==0)?text_ln.length:((int)text_ln.length/part));
-            String text_buf=text_ln[0]+" \n";
+            String[] text_ln = text.split("\n");
+            int partSize = ((part == 0) ? text_ln.length : ((int) text_ln.length / part));
+            String text_buf = text_ln[0] + " \n";
             for (int i = 1; i <= text_ln.length; i++) {
-                text_buf+=text_ln[i]+"\n";
-                if (i%partSize==0 || text_ln.length==i) {
-                    saveTextFile(patch+"_"+i, text_buf.substring(0, text_buf.length()-2));
-                    text_buf=text_ln[0]+" \n";
+                text_buf += text_ln[i] + "\n";
+                if (i % partSize == 0 || text_ln.length - 1 == i) {
+                    saveTextFile(patch + "_" + i, text_buf.substring(0, text_buf.length() - ((text_ln.length - 1 == i) ? 1 : 2)));
+                    text_buf = text_ln[0] + " \n";
                 }
             }
         } catch (Exception ex) {
             System.err.println(ex.getLocalizedMessage());
         }
     }
-    
+
     public static void saveTextFile(String patch, String text) {
         try {
             File file = new File(patch);
@@ -93,72 +103,78 @@ public class Util {
             BufferedWriter out = new BufferedWriter(writer);
             out.write(text);
             out.close();
-            JOptionPane.showMessageDialog(null, "File ["+patch+"] saved!");
+            JOptionPane.showMessageDialog(null, "File [" + patch + "] saved!");
         } catch (Exception ex) {
             System.err.println(ex.getLocalizedMessage());
         }
     }
-    
+
     private static void resizeOrCopy(File src, String out, String w, String h, boolean resize) {
         if (resize) {
             //Util.resizeImage(src, new File(out),Integer.parseInt(w),Integer.parseInt(h));
-            Util.resizeImage(src, new File(out),Integer.parseInt(h));
+            Util.resizeImage(src, new File(out), Integer.parseInt(w), Integer.parseInt(h));
         } else {
             Util.copyFile(src, new File(out));
         }
     }
 
     public static void findImage(String id, String cnt, MainFrame core) {
-        String to = core.imgToField.getText().trim();
-        String toSrc = core.imgSrcToField.getText().trim();
         for (Iterator<FileBean> it = core.dbFiles.iterator(); it.hasNext();) {
             FileBean fileBean = it.next();
             if (fileBean.getId().equals(id)) {
-                String fileXS = to + "/" + getMD5("Image" + cnt) + "_XS.jpg";
-                String fileS = to + "/" + getMD5("Image" + cnt) + "_S.jpg";
-                String fileM = to + "/" + getMD5("Image" + cnt) + "_M.jpg";
-                String fileL = to + "/" + getMD5("Image" + cnt) + "_L.jpg";
-                String fileXL = to + "/" + getMD5("Image" + cnt) + "_XL.jpg";
-                //String fileS=to+"/"+getMD5("Image"+cnt)+"_"+prefix_big+".jpg";
-                String genFile = to + "/" + getMD5("Image" + cnt) + "_Generic.jpg";
-                String srcFile = toSrc + "/" + getMD5("Image" + cnt) + ".jpg";
-
-                resizeOrCopy(fileBean.getImage(), fileXS, core.k2ImgXSW.getText(), core.k2ImgXSH.getText(), core.resizeXS.isSelected());
-                resizeOrCopy(fileBean.getImage(), fileS, core.k2ImgSW.getText(), core.k2ImgSH.getText(), core.resizeS.isSelected());
-                resizeOrCopy(fileBean.getImage(), fileM, core.k2ImgMW.getText(), core.k2ImgMH.getText(), core.resizeM.isSelected());
-                resizeOrCopy(fileBean.getImage(), fileL, core.k2ImgLW.getText(), core.k2ImgLH.getText(), core.resizeL.isSelected());
-                resizeOrCopy(fileBean.getImage(), fileXL, core.k2ImgXLW.getText(), core.k2ImgXLH.getText(), core.resizeXL.isSelected());
-
-                Util.copyFile(fileBean.getImage(), new File(genFile));
-                if (core.copyImgButton.isSelected()) {
-                    Util.copyFile(fileBean.getImage(), new File(srcFile));
-                }
+                saveImage(cnt, fileBean.getImage(), core);
             }
         }
     }
-    
+
+    public static void saveImage(String cnt, File image, MainFrame core) {
+        String to = core.imgToField.getText().trim();
+        String toSrc = core.imgSrcToField.getText().trim();
+        String md5Name = getMD5("Image" + cnt);
+        String fileXS = to + "/" + md5Name + "_XS.jpg";
+        String fileS = to + "/" + md5Name + "_S.jpg";
+        String fileM = to + "/" + md5Name + "_M.jpg";
+        String fileL = to + "/" + md5Name + "_L.jpg";
+        String fileXL = to + "/" + md5Name + "_XL.jpg";
+        //String fileS=to+"/"+md5Name+"_"+prefix_big+".jpg";
+        String genFile = to + "/" + md5Name + "_Generic.jpg";
+        String srcFile = toSrc + "/" + md5Name + ".jpg";
+
+        resizeOrCopy(image, fileXS, core.k2ImgXSW.getText(), core.k2ImgXSH.getText(), core.resizeXS.isSelected());
+        resizeOrCopy(image, fileS, core.k2ImgSW.getText(), core.k2ImgSH.getText(), core.resizeS.isSelected());
+        resizeOrCopy(image, fileM, core.k2ImgMW.getText(), core.k2ImgMH.getText(), core.resizeM.isSelected());
+        resizeOrCopy(image, fileL, core.k2ImgLW.getText(), core.k2ImgLH.getText(), core.resizeL.isSelected());
+        resizeOrCopy(image, fileXL, core.k2ImgXLW.getText(), core.k2ImgXLH.getText(), core.resizeXL.isSelected());
+        resizeOrCopy(image, genFile, core.k2ImgGW.getText(), core.k2ImgGH.getText(), core.resizeG.isSelected());
+        if (core.copyImgButton.isSelected()) {
+            Util.copyFile(image, new File(srcFile));
+        }
+    }
+    /*
+     public static void resizeImage(File image, File to, int w, int h) {
+     try {
+     BufferedImage img = ImageIO.read(image);
+     BufferedImage res_img = Scalr.resize(img, w, h);
+     ImageIO.write(res_img, "jpg", to);
+     System.out.println("IMG["+w+"*"+h+"]: "+image.toPath()+"->"+to.toPath());
+     } catch (Exception ex) {
+     System.err.println(ex.getLocalizedMessage());
+     //ex.printStackTrace();
+     }
+     }*/
+
     public static void resizeImage(File image, File to, int w, int h) {
         try {
             BufferedImage img = ImageIO.read(image);
-            BufferedImage res_img = Scalr.resize(img, w, h);
+            BufferedImage res_img = Scalr.resize(img, Scalr.Method.ULTRA_QUALITY, Scalr.Mode.AUTOMATIC, w, h);
             ImageIO.write(res_img, "jpg", to);
-            System.out.println("IMG["+w+"*"+h+"]: "+image.toPath()+"->"+to.toPath());
+            System.out.println("IMG_H[" + h + "]: " + image.toPath() + "->" + to.toPath());
         } catch (Exception ex) {
             System.err.println(ex.getLocalizedMessage());
             //ex.printStackTrace();
         }
     }
-    public static void resizeImage(File image, File to, int h) {
-        try {
-            BufferedImage img = ImageIO.read(image);
-            BufferedImage res_img = Scalr.resize(img, Scalr.Method.ULTRA_QUALITY,Scalr.Mode.FIT_TO_HEIGHT,h);
-            ImageIO.write(res_img, "jpg", to);
-            System.out.println("IMG_H["+h+"]: "+image.toPath()+"->"+to.toPath());
-        } catch (Exception ex) {
-            System.err.println(ex.getLocalizedMessage());
-            //ex.printStackTrace();
-        }
-    }
+
     /**
      *
      * @param str getMD5 by string
@@ -178,65 +194,133 @@ public class Util {
     public static void copyFile(File from, File to) {
         try {
             Files.copy(from.toPath(), to.toPath());
-            System.out.println("IMG: "+from.toPath()+"->"+to.toPath());
+            System.out.println("IMG: " + from.toPath() + "->" + to.toPath());
         } catch (Exception ex) {
             System.err.println(ex.getLocalizedMessage());
         }
     }
-    
+
     /**
      *
      * @param inc - RUS(UTF-8) to Latin
      * @return translite str
      */
-    public static String toTranslite(String inc)
-    {
-        String tmp="";
+    public static String toTranslite(String inc) {
+        String tmp = "";
         try {
             char[] str = new String(inc.getBytes("UTF-8"), "UTF-8").toLowerCase().toCharArray();
-            for (int i=0;i<str.length;i++)
-            {
-                switch(str[i])
-                {
-                    case 'а': tmp+="a"; break;
-                    case 'б': tmp+="b"; break;
-                    case 'в': tmp+="v"; break;
-                    case 'г': tmp+="g"; break;
-                    case 'д': tmp+="d"; break;
-                    case 'е': tmp+="e"; break;
-                    case 'ё': tmp+="jo"; break;
-                    case 'ж': tmp+="zh"; break;
-                    case 'з': tmp+="z"; break;
-                    case 'и': tmp+="i"; break;
-                    case 'й': tmp+="jj"; break;
-                    case 'к': tmp+="k"; break;
-                    case 'л': tmp+="l"; break;
-                    case 'м': tmp+="m"; break;
-                    case 'н': tmp+="n"; break;
-                    case 'о': tmp+="o"; break;
-                    case 'п': tmp+="p"; break;
-                    case 'р': tmp+="r"; break;
-                    case 'с': tmp+="s"; break;
-                    case 'т': tmp+="t"; break;
-                    case 'у': tmp+="u"; break;
-                    case 'ф': tmp+="f"; break;
-                    case 'х': tmp+="kh"; break;
-                    case 'ц': tmp+="c"; break;
-                    case 'ч': tmp+="ch"; break;
-                    case 'ш': tmp+="sh"; break;
-                    case 'щ': tmp+="sch"; break;
-                    case 'ъ': tmp+=""; break;
-                    case 'ы': tmp+="y"; break;
-                    case 'ь': tmp+="-"; break;
-                    case 'э': tmp+="eh"; break;
-                    case 'ю': tmp+="yu"; break;
-                    case 'я': tmp+="ya"; break;
-                    default: tmp+=str[i];
+            for (int i = 0; i < str.length; i++) {
+                switch (str[i]) {
+                    case 'а':
+                        tmp += "a";
+                        break;
+                    case 'б':
+                        tmp += "b";
+                        break;
+                    case 'в':
+                        tmp += "v";
+                        break;
+                    case 'г':
+                        tmp += "g";
+                        break;
+                    case 'д':
+                        tmp += "d";
+                        break;
+                    case 'е':
+                        tmp += "e";
+                        break;
+                    case 'ё':
+                        tmp += "jo";
+                        break;
+                    case 'ж':
+                        tmp += "zh";
+                        break;
+                    case 'з':
+                        tmp += "z";
+                        break;
+                    case 'и':
+                        tmp += "i";
+                        break;
+                    case 'й':
+                        tmp += "jj";
+                        break;
+                    case 'к':
+                        tmp += "k";
+                        break;
+                    case 'л':
+                        tmp += "l";
+                        break;
+                    case 'м':
+                        tmp += "m";
+                        break;
+                    case 'н':
+                        tmp += "n";
+                        break;
+                    case 'о':
+                        tmp += "o";
+                        break;
+                    case 'п':
+                        tmp += "p";
+                        break;
+                    case 'р':
+                        tmp += "r";
+                        break;
+                    case 'с':
+                        tmp += "s";
+                        break;
+                    case 'т':
+                        tmp += "t";
+                        break;
+                    case 'у':
+                        tmp += "u";
+                        break;
+                    case 'ф':
+                        tmp += "f";
+                        break;
+                    case 'х':
+                        tmp += "kh";
+                        break;
+                    case 'ц':
+                        tmp += "c";
+                        break;
+                    case 'ч':
+                        tmp += "ch";
+                        break;
+                    case 'ш':
+                        tmp += "sh";
+                        break;
+                    case 'щ':
+                        tmp += "sch";
+                        break;
+                    case 'ъ':
+                        tmp += "";
+                        break;
+                    case 'ы':
+                        tmp += "y";
+                        break;
+                    case 'ь':
+                        tmp += "-";
+                        break;
+                    case 'э':
+                        tmp += "eh";
+                        break;
+                    case 'ю':
+                        tmp += "yu";
+                        break;
+                    case 'я':
+                        tmp += "ya";
+                        break;
+                    default:
+                        tmp += str[i];
                 }
             }
-        } catch (Exception ex) { 
-            System.err.println(ex.getLocalizedMessage()); 
+        } catch (Exception ex) {
+            System.err.println(ex.getLocalizedMessage());
         }
         return tmp;
+    }
+
+    public static String clearP(String str) {
+        return str.replace("'", "").replace("  ", "").replace("<p></p>", "").replace("<p> </p>", "").replace("<p>·</p>", "").replace("« ", "«").replace("<p> </p>", "").replace("<p>&nbsp;</p>", "").replace("<p> </p>", "");
     }
 }

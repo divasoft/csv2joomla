@@ -26,6 +26,20 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="k2CatId" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="k2StartNumField" min="-2" pref="52" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jSpinner1" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -42,34 +56,20 @@
                                   <Component id="generatorBtn" max="32767" attributes="0"/>
                               </Group>
                           </Group>
-                      </Group>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Component id="jLabel1" min="-2" pref="121" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="k2CatId" min="-2" pref="50" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="k2StartNumField" min="-2" pref="52" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jSpinner1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="236" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="jTabbedPane2" min="-2" pref="280" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Component id="copyAllImgButton" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="copyImgButton" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="copyAllImgButton" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="copyImgButton" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="jTabbedPane2" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="pathHtmlBtn" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -90,9 +90,11 @@
                   <Component id="generatorBtn" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
+              <Component id="pathHtmlBtn" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="9" max="32767" attributes="0"/>
               <Component id="progressBar" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jTabbedPane1" max="32767" attributes="0"/>
+              <Component id="jTabbedPane1" min="-2" pref="178" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -103,10 +105,10 @@
                   <Component id="jSpinner1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+              <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="jTabbedPane2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="copyImgButton" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="copyAllImgButton" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -241,12 +243,12 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane1" alignment="1" pref="687" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" alignment="1" pref="438" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane1" alignment="0" pref="182" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" alignment="0" pref="150" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -286,12 +288,12 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane3" alignment="0" pref="687" max="32767" attributes="0"/>
+                  <Component id="jScrollPane3" alignment="0" pref="438" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane3" alignment="0" pref="182" max="32767" attributes="0"/>
+                  <Component id="jScrollPane3" alignment="0" pref="150" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -329,12 +331,12 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane2" alignment="1" pref="687" max="32767" attributes="0"/>
+                  <Component id="jScrollPane2" alignment="1" pref="438" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane2" alignment="0" pref="182" max="32767" attributes="0"/>
+                  <Component id="jScrollPane2" alignment="0" pref="150" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -350,7 +352,7 @@
                   <Properties>
                     <Property name="columns" type="int" value="20"/>
                     <Property name="rows" type="int" value="5"/>
-                    <Property name="text" type="java.lang.String" value="({id}, &apos;{title}&apos;, &apos;{alias}&apos;, {catid}, 1, &apos;{introtext}&apos;, &apos;{fulltext}&apos;, NULL, NULL, &apos;[]&apos;, &apos;&apos;, &apos;{date_add}&apos;, 653, &apos;&apos;, 653, &apos;{date_add}&apos;, &apos;0000-00-00 00:00:00&apos;, 0, &apos;2013-02-19 11:02:15&apos;, &apos;0000-00-00 00:00:00&apos;, 0, 1, {ordering}, 0, 0, &apos;&apos;, &apos;&apos;, &apos;&apos;, &apos;&apos;, 0, &apos;{&quot;catItemTitle&quot;:&quot;&quot;,&quot;catItemTitleLinked&quot;:&quot;&quot;,&quot;catItemFeaturedNotice&quot;:&quot;&quot;,&quot;catItemAuthor&quot;:&quot;&quot;,&quot;catItemDateCreated&quot;:&quot;&quot;,&quot;catItemRating&quot;:&quot;&quot;,&quot;catItemImage&quot;:&quot;&quot;,&quot;catItemIntroText&quot;:&quot;&quot;,&quot;catItemExtraFields&quot;:&quot;&quot;,&quot;catItemHits&quot;:&quot;&quot;,&quot;catItemCategory&quot;:&quot;&quot;,&quot;catItemTags&quot;:&quot;&quot;,&quot;catItemAttachments&quot;:&quot;&quot;,&quot;catItemAttachmentsCounter&quot;:&quot;&quot;,&quot;catItemVideo&quot;:&quot;&quot;,&quot;catItemVideoWidth&quot;:&quot;&quot;,&quot;catItemVideoHeight&quot;:&quot;&quot;,&quot;catItemAudioWidth&quot;:&quot;&quot;,&quot;catItemAudioHeight&quot;:&quot;&quot;,&quot;catItemVideoAutoPlay&quot;:&quot;&quot;,&quot;catItemImageGallery&quot;:&quot;&quot;,&quot;catItemDateModified&quot;:&quot;&quot;,&quot;catItemReadMore&quot;:&quot;&quot;,&quot;catItemCommentsAnchor&quot;:&quot;&quot;,&quot;catItemK2Plugins&quot;:&quot;&quot;,&quot;itemDateCreated&quot;:&quot;&quot;,&quot;itemTitle&quot;:&quot;&quot;,&quot;itemFeaturedNotice&quot;:&quot;&quot;,&quot;itemAuthor&quot;:&quot;&quot;,&quot;itemFontResizer&quot;:&quot;&quot;,&quot;itemPrintButton&quot;:&quot;&quot;,&quot;itemEmailButton&quot;:&quot;&quot;,&quot;itemSocialButton&quot;:&quot;&quot;,&quot;itemVideoAnchor&quot;:&quot;&quot;,&quot;itemImageGalleryAnchor&quot;:&quot;&quot;,&quot;itemCommentsAnchor&quot;:&quot;&quot;,&quot;itemRating&quot;:&quot;&quot;,&quot;itemImage&quot;:&quot;&quot;,&quot;itemImgSize&quot;:&quot;&quot;,&quot;itemImageMainCaption&quot;:&quot;&quot;,&quot;itemImageMainCredits&quot;:&quot;&quot;,&quot;itemIntroText&quot;:&quot;&quot;,&quot;itemFullText&quot;:&quot;&quot;,&quot;itemExtraFields&quot;:&quot;&quot;,&quot;itemDateModified&quot;:&quot;&quot;,&quot;itemHits&quot;:&quot;&quot;,&quot;itemCategory&quot;:&quot;&quot;,&quot;itemTags&quot;:&quot;&quot;,&quot;itemAttachments&quot;:&quot;&quot;,&quot;itemAttachmentsCounter&quot;:&quot;&quot;,&quot;itemVideo&quot;:&quot;&quot;,&quot;itemVideoWidth&quot;:&quot;&quot;,&quot;itemVideoHeight&quot;:&quot;&quot;,&quot;itemAudioWidth&quot;:&quot;&quot;,&quot;itemAudioHeight&quot;:&quot;&quot;,&quot;itemVideoAutoPlay&quot;:&quot;&quot;,&quot;itemVideoCaption&quot;:&quot;&quot;,&quot;itemVideoCredits&quot;:&quot;&quot;,&quot;itemImageGallery&quot;:&quot;&quot;,&quot;itemNavigation&quot;:&quot;&quot;,&quot;itemComments&quot;:&quot;&quot;,&quot;itemTwitterButton&quot;:&quot;&quot;,&quot;itemFacebookButton&quot;:&quot;&quot;,&quot;itemGooglePlusOneButton&quot;:&quot;&quot;,&quot;itemAuthorBlock&quot;:&quot;&quot;,&quot;itemAuthorImage&quot;:&quot;&quot;,&quot;itemAuthorDescription&quot;:&quot;&quot;,&quot;itemAuthorURL&quot;:&quot;&quot;,&quot;itemAuthorEmail&quot;:&quot;&quot;,&quot;itemAuthorLatest&quot;:&quot;&quot;,&quot;itemAuthorLatestLimit&quot;:&quot;&quot;,&quot;itemRelated&quot;:&quot;&quot;,&quot;itemRelatedLimit&quot;:&quot;&quot;,&quot;itemRelatedTitle&quot;:&quot;&quot;,&quot;itemRelatedCategory&quot;:&quot;&quot;,&quot;itemRelatedImageSize&quot;:&quot;&quot;,&quot;itemRelatedIntrotext&quot;:&quot;&quot;,&quot;itemRelatedFulltext&quot;:&quot;&quot;,&quot;itemRelatedAuthor&quot;:&quot;&quot;,&quot;itemRelatedMedia&quot;:&quot;&quot;,&quot;itemRelatedImageGallery&quot;:&quot;&quot;,&quot;itemK2Plugins&quot;:&quot;&quot;}&apos;, &apos;&apos;, &apos;robots=\u005cnauthor=&apos;, &apos;&apos;, &apos;&apos;, &apos;*&apos;)" containsInvalidXMLChars="true"/>
+                    <Property name="text" type="java.lang.String" value="({id}, &apos;{title}&apos;, &apos;{alias}&apos;, {catid}, 1, &apos;{introtext}&apos;, &apos;{fulltext}&apos;, NULL, NULL, &apos;[]&apos;, &apos;&apos;, &apos;{date_add}&apos;, 653, &apos;&apos;, 653, &apos;{date_add}&apos;, &apos;0000-00-00 00:00:00&apos;, 0, &apos;{date_add}&apos;, &apos;0000-00-00 00:00:00&apos;, 0, 1, {ordering}, 0, 0, &apos;&apos;, &apos;&apos;, &apos;&apos;, &apos;&apos;, 0, &apos;{&quot;catItemTitle&quot;:&quot;&quot;,&quot;catItemTitleLinked&quot;:&quot;&quot;,&quot;catItemFeaturedNotice&quot;:&quot;&quot;,&quot;catItemAuthor&quot;:&quot;&quot;,&quot;catItemDateCreated&quot;:&quot;&quot;,&quot;catItemRating&quot;:&quot;&quot;,&quot;catItemImage&quot;:&quot;&quot;,&quot;catItemIntroText&quot;:&quot;&quot;,&quot;catItemExtraFields&quot;:&quot;&quot;,&quot;catItemHits&quot;:&quot;&quot;,&quot;catItemCategory&quot;:&quot;&quot;,&quot;catItemTags&quot;:&quot;&quot;,&quot;catItemAttachments&quot;:&quot;&quot;,&quot;catItemAttachmentsCounter&quot;:&quot;&quot;,&quot;catItemVideo&quot;:&quot;&quot;,&quot;catItemVideoWidth&quot;:&quot;&quot;,&quot;catItemVideoHeight&quot;:&quot;&quot;,&quot;catItemAudioWidth&quot;:&quot;&quot;,&quot;catItemAudioHeight&quot;:&quot;&quot;,&quot;catItemVideoAutoPlay&quot;:&quot;&quot;,&quot;catItemImageGallery&quot;:&quot;&quot;,&quot;catItemDateModified&quot;:&quot;&quot;,&quot;catItemReadMore&quot;:&quot;&quot;,&quot;catItemCommentsAnchor&quot;:&quot;&quot;,&quot;catItemK2Plugins&quot;:&quot;&quot;,&quot;itemDateCreated&quot;:&quot;&quot;,&quot;itemTitle&quot;:&quot;&quot;,&quot;itemFeaturedNotice&quot;:&quot;&quot;,&quot;itemAuthor&quot;:&quot;&quot;,&quot;itemFontResizer&quot;:&quot;&quot;,&quot;itemPrintButton&quot;:&quot;&quot;,&quot;itemEmailButton&quot;:&quot;&quot;,&quot;itemSocialButton&quot;:&quot;&quot;,&quot;itemVideoAnchor&quot;:&quot;&quot;,&quot;itemImageGalleryAnchor&quot;:&quot;&quot;,&quot;itemCommentsAnchor&quot;:&quot;&quot;,&quot;itemRating&quot;:&quot;&quot;,&quot;itemImage&quot;:&quot;&quot;,&quot;itemImgSize&quot;:&quot;&quot;,&quot;itemImageMainCaption&quot;:&quot;&quot;,&quot;itemImageMainCredits&quot;:&quot;&quot;,&quot;itemIntroText&quot;:&quot;&quot;,&quot;itemFullText&quot;:&quot;&quot;,&quot;itemExtraFields&quot;:&quot;&quot;,&quot;itemDateModified&quot;:&quot;&quot;,&quot;itemHits&quot;:&quot;&quot;,&quot;itemCategory&quot;:&quot;&quot;,&quot;itemTags&quot;:&quot;&quot;,&quot;itemAttachments&quot;:&quot;&quot;,&quot;itemAttachmentsCounter&quot;:&quot;&quot;,&quot;itemVideo&quot;:&quot;&quot;,&quot;itemVideoWidth&quot;:&quot;&quot;,&quot;itemVideoHeight&quot;:&quot;&quot;,&quot;itemAudioWidth&quot;:&quot;&quot;,&quot;itemAudioHeight&quot;:&quot;&quot;,&quot;itemVideoAutoPlay&quot;:&quot;&quot;,&quot;itemVideoCaption&quot;:&quot;&quot;,&quot;itemVideoCredits&quot;:&quot;&quot;,&quot;itemImageGallery&quot;:&quot;&quot;,&quot;itemNavigation&quot;:&quot;&quot;,&quot;itemComments&quot;:&quot;&quot;,&quot;itemTwitterButton&quot;:&quot;&quot;,&quot;itemFacebookButton&quot;:&quot;&quot;,&quot;itemGooglePlusOneButton&quot;:&quot;&quot;,&quot;itemAuthorBlock&quot;:&quot;&quot;,&quot;itemAuthorImage&quot;:&quot;&quot;,&quot;itemAuthorDescription&quot;:&quot;&quot;,&quot;itemAuthorURL&quot;:&quot;&quot;,&quot;itemAuthorEmail&quot;:&quot;&quot;,&quot;itemAuthorLatest&quot;:&quot;&quot;,&quot;itemAuthorLatestLimit&quot;:&quot;&quot;,&quot;itemRelated&quot;:&quot;&quot;,&quot;itemRelatedLimit&quot;:&quot;&quot;,&quot;itemRelatedTitle&quot;:&quot;&quot;,&quot;itemRelatedCategory&quot;:&quot;&quot;,&quot;itemRelatedImageSize&quot;:&quot;&quot;,&quot;itemRelatedIntrotext&quot;:&quot;&quot;,&quot;itemRelatedFulltext&quot;:&quot;&quot;,&quot;itemRelatedAuthor&quot;:&quot;&quot;,&quot;itemRelatedMedia&quot;:&quot;&quot;,&quot;itemRelatedImageGallery&quot;:&quot;&quot;,&quot;itemK2Plugins&quot;:&quot;&quot;}&apos;, &apos;&apos;, &apos;robots=\u005cnauthor=&apos;, &apos;&apos;, &apos;&apos;, &apos;*&apos;)" containsInvalidXMLChars="true"/>
                   </Properties>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -391,7 +393,7 @@
                       <Component id="k2ImgXSH" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="resizeXS" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="10" max="32767" attributes="0"/>
+                      <EmptySpace pref="23" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -480,7 +482,7 @@
                       <Component id="k2ImgSH" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="resizeS" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="10" max="32767" attributes="0"/>
+                      <EmptySpace pref="23" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -569,7 +571,7 @@
                       <Component id="k2ImgMH" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="resizeM" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="10" max="32767" attributes="0"/>
+                      <EmptySpace pref="23" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -658,7 +660,7 @@
                       <Component id="k2ImgLH" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="resizeL" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="10" max="32767" attributes="0"/>
+                      <EmptySpace pref="23" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -747,7 +749,7 @@
                       <Component id="k2ImgXLH" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="resizeXL" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="10" max="32767" attributes="0"/>
+                      <EmptySpace pref="23" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -804,6 +806,94 @@
               </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel14">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Height"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="panelG">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="G">
+                <Property name="tabTitle" type="java.lang.String" value="G"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel15" min="-2" pref="42" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="k2ImgGW" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel16" min="-2" pref="42" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="k2ImgGH" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="resizeG" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="23" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="11" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="k2ImgGH" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="k2ImgGW" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="resizeG" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabel15">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Width"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JTextField" name="k2ImgGW">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="400"/>
+                <Property name="toolTipText" type="java.lang.String" value="width"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JTextField" name="k2ImgGH">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="400"/>
+                <Property name="toolTipText" type="java.lang.String" value="height"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="resizeG">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Resize"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel16">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Height"/>
               </Properties>
@@ -885,6 +975,18 @@
         <Property name="selected" type="boolean" value="true"/>
         <Property name="text" type="java.lang.String" value="CopyImages"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JButton" name="pathHtmlBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Select File HTML PART"/>
+        <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&lt;body&gt;&#xa;Format: &lt;b&gt;standart CSV&lt;/b&gt;&#xa;&lt;/body&gt;&lt;/html&gt;"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pathHtmlBtnActionPerformed"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
