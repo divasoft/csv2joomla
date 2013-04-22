@@ -65,6 +65,7 @@ public class Worker implements Runnable {
                 Elements elementsByTag = tables.getElementsByTag("tr");
                 core.maxPB(elementsByTag.size());
                 int cnt = Integer.parseInt(core.k2StartNumField.getText().trim());
+                System.out.print("DELETE FROM `kmtt_k2_items` WHERE id IN(");
                 for (Iterator<Element> it = elementsByTag.iterator(); it.hasNext();) {
                     Element element = it.next();
                     Elements elementsByStrong = element.getElementsByTag("strong");
@@ -75,16 +76,17 @@ public class Worker implements Runnable {
                     }
                     String imgSrc = element.getElementsByTag("img").get(0).attr("src");
                     String image = new File(core.pathHtmlBtn.getText()).getParentFile().getAbsolutePath();
-                    Timestamp timestamp = new Timestamp(new Date().getTime()-cnt);
+                    Timestamp timestamp = new Timestamp(new Date().getTime()-cnt*1000);
                     StringBean bean = new StringBean("", Jsoup.parseBodyFragment(element.html().replaceAll("<strong>.*?</strong>", "")).text(), title, cnt + "", timestamp+"");
                     File imgFile = new File(image + "/" + imgSrc);
                     if (core.copyAllImgButton.isSelected()) Util.saveImage(cnt+ "", imgFile, core);
                     core.dbClear.add(bean);
+                    System.out.print(cnt+",");
                     cnt++;
                     core.incPB();
                 }
                 end();
-                System.out.println("");
+                
             } catch (Exception ex) {
                 ex.printStackTrace();
             }

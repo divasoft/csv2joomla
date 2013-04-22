@@ -166,7 +166,7 @@ public class Util {
     public static void resizeImage(File image, File to, int w, int h) {
         try {
             BufferedImage img = ImageIO.read(image);
-            BufferedImage res_img = Scalr.resize(img, Scalr.Method.ULTRA_QUALITY, Scalr.Mode.AUTOMATIC, w, h);
+            BufferedImage res_img = Scalr.resize(img, Scalr.Method.ULTRA_QUALITY, Scalr.Mode.FIT_TO_WIDTH, h);
             ImageIO.write(res_img, "jpg", to);
             System.out.println("IMG_H[" + h + "]: " + image.toPath() + "->" + to.toPath());
         } catch (Exception ex) {
