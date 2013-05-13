@@ -116,7 +116,7 @@ public class Worker implements Runnable {
                     StringBean bean = new StringBean();
 
                     bean.setContent((Jsoup.parseBodyFragment(string.replace("<p>&nbsp;</p>", "").replace("<p> </p>", "").replaceAll("</p><p.*?>", "#")).text().trim().replace("     ", "").replace("  ", "").replace("   ", "").replace("<p></p>", "")));
-                    bean.setK2Id(Integer.toString(cnt++));
+                    
                     if (!bean.getContent().equals("ERROR")) {
                         core.dbClear.add(bean);
                         if (core.copyAllImgButton.isSelected()) {
@@ -126,6 +126,7 @@ public class Worker implements Runnable {
                             }
                         }
                     }
+                    bean.setK2Id(Integer.toString(cnt++));
                     core.incPB();
                 }
 
